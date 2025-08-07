@@ -1,12 +1,9 @@
 export const colors = {
-  //monochrome
   WHITE: "#ffffff",
   GREY_1: "#F8F8FD",
   GREY_2: "#E5E0FC",
   GREY_3: "#8A8FB9",
-  BLACK: "##101750",
-
-  //colourful
+  BLACK: "#101750",
   PRIMARY: "#FB2E86",
   PRIMARY_DARK: "#F0056A",
   PRIMARY_LIGHT: "#FC5FA2",
