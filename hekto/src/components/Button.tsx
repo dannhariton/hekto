@@ -1,33 +1,50 @@
 import { typography } from "@/styles/typography";
-import styled from "styled-components";
+import { rem } from "@/utils/remConvert";
+import styled, { css, RuleSet } from "styled-components";
 import { colors } from "../styles/colors";
 
-export const S = {
-  Button: styled.button<{
-    variant: keyof typeof colors;
-    padding: string;
-    radius: string;
-    font: keyof typeof typography;
-  }>`
-    background-color: ${(props) => colors[props.variant]};
-    color: ${colors.WHITE};
-    padding: ${(props) => props.padding};
-    border-radius: ${(props) => props.radius};
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    ${(props) => typography[props.font]}
+type Variant = "DEFAULT" | "ICON" | "SUCCESS";
+type Styles = Record<Variant, RuleSet>;
+
+const styles: Styles = {
+  DEFAULT: css`
+    background-color: ${colors.PRIMARY};
+    padding: ${rem(16, 40)};
+    border-radius: ${rem(8)};
 
     &:hover {
-      background-color: ${(props) => {
-        const darkVariant = `${props.variant}_DARK`;
+      background-color: ${colors.PRIMARY_DARK};
+    }
+  `,
+  ICON: css`
+    background-color: ${colors.PRIMARY};
+    padding: ${rem(6, 14)};
+    border-radius: ${rem(6)};
 
-        if (darkVariant in colors) {
-          return colors[darkVariant as keyof typeof colors];
-        }
+    &:hover {
+      background-color: ${colors.PRIMARY_DARK};
+    }
+  `,
+  SUCCESS: css`
+    background-color: ${colors.SUCCESS};
+    padding: ${rem(11, 16)};
+    border-radius: ${rem(6)};
+    font-size: ${rem(14)};
 
-        return colors.PRIMARY_DARK;
-      }};
+    &:hover {
+      background-color: ${colors.SUCCESS_DARK};
     }
   `,
 };
+
+export const Button = styled.button<{
+  variant: Variant;
+}>`
+  color: ${colors.WHITE};
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  ${typography.subtitleExtraSmall}
+
+  ${({ variant }) => styles[variant]}
+`;

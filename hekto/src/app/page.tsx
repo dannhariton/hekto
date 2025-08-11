@@ -1,46 +1,36 @@
 "use client";
-import FeaturedCard from "@/components/FeaturedCard";
+import { Button } from "@/components/Button";
 import IconButton from "@/components/IconButton";
+import Stars from "@/components/ProductCard/components/Stars";
+import FeaturedCard from "@/components/ProductCard/ProductCard";
 import { GlobalStyle } from "@/styles/globalStyle";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import { S } from "../components/Button";
 
 export default function Page() {
   return (
     <>
       <GlobalStyle />
-      <S.Button
-        variant="PRIMARY"
-        padding="16px 40px"
-        radius="8px"
-        font="subtitleExtraSmall"
-      >
-        Shop Now
-      </S.Button>
-      <S.Button
-        variant="SUCCESS"
-        padding="11px 16px"
-        radius="6px"
-        font="subtitleDoubleExtraSmall"
-      >
-        Shop Now
-      </S.Button>
-      <S.Button
-        variant="PRIMARY"
-        padding="6px 11px"
-        radius="6px"
-        font="subtitleExtraSmall"
-      >
+      <Button variant="DEFAULT">Shop Now</Button>
+      <Button variant="SUCCESS">Shop Now</Button>
+      <Button variant="ICON">
         <SearchIcon />
-      </S.Button>
+      </Button>
       <IconButton>
         <ShoppingCartOutlinedIcon />
       </IconButton>
       <IconButton $background>
         <ShoppingCartOutlinedIcon />
       </IconButton>
-      <FeaturedCard />
+
+      <Stars rating={3} />
+
+      <FeaturedCard variant="FEATURED" />
+      <FeaturedCard variant="LATEST" />
+      <FeaturedCard variant="TRENDING" />
+      <FeaturedCard variant="CATEGORY" />
+      <FeaturedCard variant="LIST" />
+      <FeaturedCard variant="GRID" />
     </>
   );
 }

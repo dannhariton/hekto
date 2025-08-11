@@ -53,7 +53,6 @@ export const typography = {
     font-weight: 700;
     font-size: 1rem;
   `,
-
   labelDefault: css`
     font-weight: 400;
     font-size: 1rem;
@@ -64,6 +63,6 @@ export const typography = {
   `,
   labelSmall: css`
     font-weight: 400;
-    font-size: 0.875px;
+    font-size: 0.875rem;
   `,
 };
