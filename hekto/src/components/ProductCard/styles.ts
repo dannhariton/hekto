@@ -40,7 +40,8 @@ const styles: Styles = {
     transition: all 0.2s ease-in;
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:focus-within {
       box-shadow: ${rem(8, 64, 80, -16)} rgba(${colors.BLACK_RGB}, 0.15);
 
       ${S.IconsContainer} {
@@ -106,7 +107,8 @@ const styles: Styles = {
     align-items: center;
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:focus-within {
       ${S.IconsContainer} {
         opacity: 1;
       }
@@ -230,7 +232,8 @@ const styles: Styles = {
     align-items: center;
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:focus-within {
       ${S.IconsContainer} {
         opacity: 1;
       }
