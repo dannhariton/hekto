@@ -14,7 +14,7 @@ const Star = styled(StarIcon)<{ variant: Variant }>`
 
 const Container = styled.div`
   display: flex;
-  gap: 0.5rem;
+  gap: ${rem(8)};
 `;
 
 function Stars({ rating }: { rating: number }) {

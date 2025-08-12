@@ -41,7 +41,7 @@ const styles: Styles = {
 
     &:hover,
     &:focus {
-      box-shadow: 8px 64px 80px -16px rgba(${colors.BLACK_RGB}, 0.15);
+      box-shadow: ${rem(8, 64, 80, -16)} rgba(${colors.BLACK_RGB}, 0.15);
 
       ${S.IconsContainer} {
         opacity: 1;
@@ -65,7 +65,7 @@ const styles: Styles = {
       }
 
       button {
-        margin-bottom: 8px;
+        margin-bottom: ${rem(8)};
       }
     }
 
@@ -307,7 +307,7 @@ const styles: Styles = {
     ${S.ProductImage} {
       width: ${rem(288)};
       height: ${rem(200)};
-      margin: 1rem 2rem 1rem 1rem;
+      margin: ${rem(16, 32, 16, 16)};
 
       img {
         border-radius: ${rem(4)};
@@ -369,7 +369,7 @@ const styles: Styles = {
     display: flex;
     flex-direction: column;
 
-    margin-bottom: 4rem;
+    margin-bottom: ${rem(64)};
 
     &:hover,
     &:focus {

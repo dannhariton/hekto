@@ -12,9 +12,9 @@ const Container = styled.div<{ direction: Direction; gap?: string }>`
   gap: ${({ gap }) => gap}px;
 `;
 
-const Icons = ({ dir, gap }: { dir: Direction; gap?: string }) => {
+const Icons = ({ direction, gap }: { direction: Direction; gap?: string }) => {
   return (
-    <Container direction={dir} gap={gap}>
+    <Container direction={direction} gap={gap}>
       <IconButton>
         <ShoppingCartOutlinedIcon fontSize="small" />
       </IconButton>

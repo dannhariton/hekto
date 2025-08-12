@@ -15,7 +15,7 @@ const content = {
     <>
       <S.ProductImage>
         <S.IconsContainer>
-          <Icons dir="ROW" />
+          <Icons direction="ROW" />
           <Button variant="SUCCESS">View Details</Button>
         </S.IconsContainer>
         <Image src={watchesImg} alt="product image" />
@@ -29,7 +29,7 @@ const content = {
     <>
       <S.ProductImage>
         <S.IconsContainer>
-          <Icons dir="COLUMN" />
+          <Icons direction="COLUMN" />
         </S.IconsContainer>
         <Image src={laptopImg} alt="product image" />
       </S.ProductImage>
@@ -89,7 +89,7 @@ const content = {
           </S.Stars>
         </S.ProductContent>
 
-        <Icons dir="ROW" gap="16" />
+        <Icons direction="ROW" gap="16" />
       </S.FlexContainer>
     </>
   ),
@@ -115,7 +115,7 @@ const content = {
       </S.ProductContent>
 
       <S.IconsContainer>
-        <Icons dir="ROW" gap="16" />
+        <Icons direction="ROW" gap="16" />
       </S.IconsContainer>
     </>
   ),
