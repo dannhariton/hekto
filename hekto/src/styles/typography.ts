@@ -38,7 +38,7 @@ export const typography = {
     font-size: 1.625rem;
   `,
   bodySmall: css`
-    font-weight: 700;
+    font-weight: 400;
     font-size: 0.875rem;
   `,
   bodyLarge: css`
