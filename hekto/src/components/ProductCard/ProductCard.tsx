@@ -18,7 +18,7 @@ const content = {
           <Icons $direction="ROW" />
           <Button $variant="SUCCESS">View Details</Button>
         </S.IconsContainer>
-        <Image src={watchesImg} alt="product image" />
+        <Image src={watchesImg} alt="product image" priority={true} />
       </S.ProductImage>
       <S.Title>Watches</S.Title>
       <S.Code>Code - Y523201</S.Code>
@@ -31,7 +31,7 @@ const content = {
         <S.IconsContainer>
           <Icons $direction="COLUMN" />
         </S.IconsContainer>
-        <Image src={laptopImg} alt="product image" />
+        <Image src={laptopImg} alt="product image" priority={true} />
       </S.ProductImage>
       <S.FlexContainer>
         <S.Title>Laptop</S.Title>
