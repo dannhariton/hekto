@@ -1,15 +1,14 @@
 export const colors = {
-  //monochrome
   WHITE: "#ffffff",
   GREY_1: "#F8F8FD",
   GREY_2: "#E5E0FC",
   GREY_3: "#8A8FB9",
-  BLACK: "##101750",
-
-  //colourful
+  BLACK: "#101750",
+  BLACK_RGB: "16, 23, 80",
   PRIMARY: "#FB2E86",
   PRIMARY_DARK: "#F0056A",
   PRIMARY_LIGHT: "#FC5FA2",
+  PRIMARY_VERY_LIGHT: "#FEBAD7",
   SECONDARY: "#F9BA00",
   SECONDARY_LIGHT: "#FFF3CE",
   TERTIARY: "#7E33E0",
