@@ -45,7 +45,6 @@ const S = {
     display: flex;
     flex-direction: column;
   `,
-  DropDownContainer: styled.div``,
 };
 
 function DropDown({ options }: { options: string[] }) {
@@ -74,7 +73,7 @@ function DropDown({ options }: { options: string[] }) {
   return (
     <>
       <ClickAwayListener onClickAway={handleClickAway}>
-        <S.DropDownContainer>
+        <div>
           <S.SelectedOption
             onClick={() => {
               setIsVisible((prev) => !prev);
@@ -85,7 +84,7 @@ function DropDown({ options }: { options: string[] }) {
           </S.SelectedOption>
 
           {isVisible && content}
-        </S.DropDownContainer>
+        </div>
       </ClickAwayListener>
     </>
   );
