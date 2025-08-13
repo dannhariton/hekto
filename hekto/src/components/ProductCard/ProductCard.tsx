@@ -15,8 +15,8 @@ const content = {
     <>
       <S.ProductImage>
         <S.IconsContainer>
-          <Icons direction="ROW" />
-          <Button variant="SUCCESS">View Details</Button>
+          <Icons $direction="ROW" />
+          <Button $variant="SUCCESS">View Details</Button>
         </S.IconsContainer>
         <Image src={watchesImg} alt="product image" />
       </S.ProductImage>
@@ -29,7 +29,7 @@ const content = {
     <>
       <S.ProductImage>
         <S.IconsContainer>
-          <Icons direction="COLUMN" />
+          <Icons $direction="COLUMN" />
         </S.IconsContainer>
         <Image src={laptopImg} alt="product image" />
       </S.ProductImage>
@@ -60,7 +60,7 @@ const content = {
     <>
       <S.ProductImage>
         <S.IconsContainer>
-          <Button variant="SUCCESS">View Details</Button>
+          <Button $variant="SUCCESS">View Details</Button>
         </S.IconsContainer>
         <Image src={perfumeImg} alt="product image" />
       </S.ProductImage>
@@ -89,7 +89,7 @@ const content = {
           </S.Stars>
         </S.ProductContent>
 
-        <Icons direction="ROW" gap="16" />
+        <Icons $direction="ROW" $gap="16" />
       </S.FlexContainer>
     </>
   ),
@@ -115,16 +115,16 @@ const content = {
       </S.ProductContent>
 
       <S.IconsContainer>
-        <Icons direction="ROW" gap="16" />
+        <Icons $direction="ROW" $gap="16" />
       </S.IconsContainer>
     </>
   ),
 };
 
-const FeaturedCard = ({ variant }: { variant: Variant }) => {
+const FeaturedCard = ({ $variant }: { $variant: Variant }) => {
   return (
-    <S.Container href="/" variant={variant}>
-      {content[variant]}
+    <S.Container href="/" $variant={$variant}>
+      {content[$variant]}
     </S.Container>
   );
 };

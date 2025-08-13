@@ -16,9 +16,9 @@ export default function Page() {
   return (
     <>
       <GlobalStyle />
-      <Button variant="DEFAULT">Shop Now</Button>
-      <Button variant="SUCCESS">Shop Now</Button>
-      <Button variant="ICON">
+      <Button $variant="DEFAULT">Shop Now</Button>
+      <Button $variant="SUCCESS">Shop Now</Button>
+      <Button $variant="ICON">
         <SearchIcon />
       </Button>
       <IconButton>
@@ -30,36 +30,36 @@ export default function Page() {
 
       <Stars rating={3} />
 
-      <Input variant="COMPLEX" />
-      <Input variant="DEFAULT" />
+      <Input $variant="COMPLEX" />
+      <Input $variant="DEFAULT" />
 
       <PaginationInput page={1} />
-      <PaginationIcon variant="DIAMOND" $filled />
-      <PaginationIcon variant="DIAMOND" />
-      <PaginationIcon variant="DIAMOND" />
+      <PaginationIcon $variant="DIAMOND" $filled />
+      <PaginationIcon $variant="DIAMOND" />
+      <PaginationIcon $variant="DIAMOND" />
 
       <br />
 
-      <PaginationIcon variant="LINE" $filled />
-      <PaginationIcon variant="LINE" />
-      <PaginationIcon variant="LINE" />
-      <PaginationIcon variant="LINE" />
+      <PaginationIcon $variant="LINE" $filled />
+      <PaginationIcon $variant="LINE" />
+      <PaginationIcon $variant="LINE" />
+      <PaginationIcon $variant="LINE" />
 
       <br />
-      <PaginationIcon variant="CIRCLE" $filled />
-      <PaginationIcon variant="CIRCLE" />
-      <PaginationIcon variant="CIRCLE" />
+      <PaginationIcon $variant="CIRCLE" $filled />
+      <PaginationIcon $variant="CIRCLE" />
+      <PaginationIcon $variant="CIRCLE" />
 
       <DropDown
         options={["Best Match", "Most Popular", "Price Higher", "Price Lower"]}
       />
 
-      <FeaturedCard variant="FEATURED" />
-      <FeaturedCard variant="LATEST" />
-      <FeaturedCard variant="TRENDING" />
-      <FeaturedCard variant="CATEGORY" />
-      <FeaturedCard variant="LIST" />
-      <FeaturedCard variant="GRID" />
+      <FeaturedCard $variant="FEATURED" />
+      <FeaturedCard $variant="LATEST" />
+      <FeaturedCard $variant="TRENDING" />
+      <FeaturedCard $variant="CATEGORY" />
+      <FeaturedCard $variant="LIST" />
+      <FeaturedCard $variant="GRID" />
     </>
   );
 }

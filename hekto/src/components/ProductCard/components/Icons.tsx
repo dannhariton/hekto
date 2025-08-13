@@ -6,15 +6,21 @@ import IconButton from "../../IconButton";
 
 type Direction = "ROW" | "COLUMN";
 
-const Container = styled.div<{ direction: Direction; gap?: string }>`
+const Container = styled.div<{ $direction: Direction; $gap?: string }>`
   display: flex;
-  flex-direction: ${({ direction }) => direction};
-  gap: ${({ gap }) => gap}px;
+  flex-direction: ${({ $direction }) => $direction};
+  gap: ${({ $gap }) => $gap}px;
 `;
 
-const Icons = ({ direction, gap }: { direction: Direction; gap?: string }) => {
+const Icons = ({
+  $direction,
+  $gap,
+}: {
+  $direction: Direction;
+  $gap?: string;
+}) => {
   return (
-    <Container direction={direction} gap={gap}>
+    <Container $direction={$direction} $gap={$gap}>
       <IconButton>
         <ShoppingCartOutlinedIcon fontSize="small" />
       </IconButton>

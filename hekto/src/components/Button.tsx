@@ -38,7 +38,7 @@ const styles: Styles = {
 };
 
 export const Button = styled.button<{
-  variant: Variant;
+  $variant: Variant;
 }>`
   color: ${colors.WHITE};
   display: inline-flex;
@@ -46,5 +46,5 @@ export const Button = styled.button<{
   align-items: center;
   ${typography.subtitleExtraSmall}
 
-  ${({ variant }) => styles[variant]}
+  ${({ $variant }) => styles[$variant]}
 `;

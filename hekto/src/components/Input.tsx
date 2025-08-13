@@ -59,7 +59,7 @@ const content = {
   COMPLEX: (
     <>
       <S.Input type="text" placeholder="Search" />
-      <Button variant="ICON">
+      <Button $variant="ICON">
         <SearchIcon />
       </Button>
     </>
@@ -74,8 +74,8 @@ const content = {
   ),
 };
 
-function Input({ variant }: { variant: Variant }) {
-  return <S.Container>{content[variant]}</S.Container>;
+function Input({ $variant }: { $variant: Variant }) {
+  return <S.Container>{content[$variant]}</S.Container>;
 }
 
 export default Input;

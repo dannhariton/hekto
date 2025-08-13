@@ -32,8 +32,8 @@ const styles: Styles = {
 };
 
 export const PaginationIcon = styled.button<{
-  variant: Variant;
+  $variant: Variant;
   $filled?: boolean;
 }>`
-  ${({ variant, ...props }) => styles[variant](props)};
+  ${({ $variant, ...props }) => styles[$variant](props)};
 `;

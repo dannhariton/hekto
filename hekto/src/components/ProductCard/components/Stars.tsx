@@ -5,9 +5,9 @@ import styled from "styled-components";
 
 type Variant = "FILLED" | "UNFILLED";
 
-const Star = styled(StarIcon)<{ variant: Variant }>`
-  color: ${({ variant }) =>
-    variant === "FILLED" ? colors.SECONDARY : colors.GREY_2};
+const Star = styled(StarIcon)<{ $variant: Variant }>`
+  color: ${({ $variant }) =>
+    $variant === "FILLED" ? colors.SECONDARY : colors.GREY_2};
   width: ${rem(16)};
   height: ${rem(16)};
 `;
@@ -23,7 +23,7 @@ function Stars({ rating }: { rating: number }) {
   return (
     <Container>
       {stars.map((star) => (
-        <Star key={star} variant={star <= rating ? "FILLED" : "UNFILLED"} />
+        <Star key={star} $variant={star <= rating ? "FILLED" : "UNFILLED"} />
       ))}
     </Container>
   );

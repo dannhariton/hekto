@@ -8,10 +8,10 @@ import { Variant } from "./types";
 type Styles = Record<Variant, RuleSet>;
 
 export const S = {
-  Container: styled(Link)<{ variant: Variant }>`
+  Container: styled(Link)<{ $variant: Variant }>`
     text-decoration: none;
 
-    ${({ variant }) => styles[variant]}
+    ${({ $variant }) => styles[$variant]}
   `,
   ProductImage: styled.div``,
   IconsContainer: styled.div``,
