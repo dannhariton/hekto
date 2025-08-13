@@ -13,7 +13,7 @@ const S = {
   SelectedOption: styled.button`
     color: ${colors.BLACK};
     background-color: ${colors.WHITE};
-    border: 1px solid ${colors.GREY_2};
+    border: ${rem(1)} solid ${colors.GREY_2};
     border-radius: ${rem(8)};
     padding: ${rem(7, 16)};
     display: flex;
@@ -38,7 +38,7 @@ const S = {
     z-index: 2;
     position: absolute;
     border-radius: ${rem(8)};
-    border: 1px solid ${colors.GREY_2};
+    border: ${rem(1)} solid ${colors.GREY_2};
     background-color: ${colors.WHITE};
     padding: ${rem(8, 0)};
     margin-top: ${rem(4)};

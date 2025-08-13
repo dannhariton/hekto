@@ -13,14 +13,14 @@ type Variant = "COMPLEX" | "DEFAULT";
 const S = {
   Container: styled.div`
     height: ${rem(40)};
-    border: 1px solid ${colors.GREY_2};
-    padding: 2px;
+    border: ${rem(1)} solid ${colors.GREY_2};
+    padding: ${rem(1)};
     display: flex;
-    border-radius: 0.5rem;
+    border-radius: ${rem(8)};
     background-color: ${colors.WHITE};
 
     &:has(input:invalid) {
-      border: 1px solid ${colors.DANGER};
+      border: ${rem(1)} solid ${colors.DANGER};
 
       div {
         opacity: 1;
@@ -30,7 +30,7 @@ const S = {
   Input: styled.input`
     width: 100%;
     border: none;
-    padding-left: 1rem;
+    padding-left: ${rem(16)};
     color: ${colors.BLACK};
     border-radius: 0.5rem;
     text-overflow: ellipsis;

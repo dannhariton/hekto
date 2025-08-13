@@ -12,7 +12,7 @@ const styles: Styles = {
     margin-right: ${rem(16)};
     transform: rotate(45deg);
     background-color: ${!$filled ? "transparent" : colors.PRIMARY};
-    border: 1px solid ${colors.PRIMARY};
+    border: ${rem(1)} solid ${colors.PRIMARY};
   `,
   LINE: ({ $filled }) => css`
     width: ${$filled ? rem(24) : rem(16)};
@@ -27,7 +27,7 @@ const styles: Styles = {
     margin-right: ${rem(16)};
     border-radius: 100%;
     background-color: ${!$filled ? "transparent" : colors.PRIMARY};
-    border: 1px solid ${colors.PRIMARY};
+    border: ${rem(1)} solid ${colors.PRIMARY};
   `,
 };
 

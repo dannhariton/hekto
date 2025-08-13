@@ -34,7 +34,7 @@ const styles: Styles = {
     flex-direction: column;
     align-items: center;
 
-    border-radius: 0.5rem;
+    border-radius: ${rem(8)};
     background-color: ${colors.WHITE};
     box-shadow: ${rem(8, 24, 32, -16)} rgba(${colors.BLACK_RGB}, 0.15);
     transition: all 0.2s ease-in;
@@ -62,7 +62,7 @@ const styles: Styles = {
 
       div {
         align-self: flex-start;
-        margin: 0.5rem 0 0 0.5rem;
+        margin: ${rem(8, 0, 0, 8)};
       }
 
       button {
@@ -77,14 +77,14 @@ const styles: Styles = {
 
       img {
         height: 100%;
-        border-radius: 0.25rem;
+        border-radius: ${rem(4)};
       }
     }
 
     ${S.Title} {
       ${typography.labelBold}
       color: ${colors.PRIMARY};
-      padding: 1.5rem 0;
+      padding: ${rem(24, 0)};
     }
 
     ${S.Code} {
@@ -95,8 +95,8 @@ const styles: Styles = {
     ${S.Price} {
       ${typography.labelBold}
       color: ${colors.BLACK};
-      padding-top: 0.5rem;
-      padding-bottom: 1.5rem;
+      padding-top: ${rem(8)};
+      padding-bottom: ${rem(24)};
     }
   `,
   LATEST: css`
@@ -120,7 +120,7 @@ const styles: Styles = {
       position: absolute;
       left: 0;
       bottom: 0;
-      margin: 0 0 0.5rem 0.5rem;
+      margin: ${rem(0, 0, 8, 8)};
     }
 
     ${S.ProductImage} {
@@ -129,7 +129,7 @@ const styles: Styles = {
       position: relative;
 
       img {
-        border-radius: 0.25rem;
+        border-radius: ${rem(4)};
         height: 100%;
       }
     }
@@ -149,7 +149,7 @@ const styles: Styles = {
     ${S.PriceContainer} {
       display: flex;
 
-      gap: 1rem;
+      gap: ${rem(16)};
       align-items: center;
     }
 
@@ -207,7 +207,7 @@ const styles: Styles = {
 
     ${S.PriceContainer} {
       display: flex;
-      gap: 1rem;
+      gap: ${rem(16)};
       align-items: center;
       margin-bottom: ${rem(24)};
     }
@@ -224,7 +224,7 @@ const styles: Styles = {
     }
   `,
   CATEGORY: css`
-    margin: 2rem 2rem;
+    margin: ${rem(32, 32)};
     width: ${rem(272)};
 
     display: flex;

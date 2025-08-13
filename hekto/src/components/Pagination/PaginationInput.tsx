@@ -8,7 +8,7 @@ import styled from "styled-components";
 const S = {
   PaginationContainer: styled.div`
     height: ${rem(40)};
-    border: 1px solid ${colors.GREY_2};
+    border: ${rem(1)} solid ${colors.GREY_2};
     padding: ${rem(0, 10)};
     display: flex;
     justify-content: space-between;
