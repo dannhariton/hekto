@@ -20,13 +20,13 @@ const S = {
     color: ${colors.BLACK};
     ${typography.bodySmall}
   `,
-  AddIconContainer: styled.button`
+  LastPageButton: styled.button`
     color: ${colors.BLACK};
     display: flex;
     justify-content: center;
     align-items: center;
   `,
-  RemoveIconContainer: styled.button`
+  NextPageButton: styled.button`
     color: ${colors.BLACK};
     display: flex;
     justify-content: center;
@@ -37,13 +37,13 @@ const S = {
 function PaginationInput({ page }: { page: number }) {
   return (
     <S.PaginationContainer>
-      <S.RemoveIconContainer>
+      <S.LastPageButton>
         <RemoveIcon fontSize="small" />
-      </S.RemoveIconContainer>
+      </S.LastPageButton>
       <S.Page>{page}</S.Page>
-      <S.AddIconContainer>
+      <S.NextPageButton>
         <AddIcon fontSize="small" />
-      </S.AddIconContainer>
+      </S.NextPageButton>
     </S.PaginationContainer>
   );
 }
