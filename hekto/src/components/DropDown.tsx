@@ -4,11 +4,19 @@ import { rem } from "@/utils/remConvert";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { ClickAwayListener } from "@mui/material";
 import { useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const S = {
-  Icon: styled(ExpandMoreIcon)`
-    transform: rotate(180deg);
+  Icon: styled(ExpandMoreIcon)<{ $shouldRotate?: boolean }>`
+    ${({ $shouldRotate }) => {
+      return (
+        $shouldRotate &&
+        css`
+          transform: rotate(-180deg);
+        `
+      );
+    }};
+    transition: transform 0.1s;
   `,
   SelectedOption: styled.button`
     color: ${colors.BLACK};
@@ -80,7 +88,7 @@ function DropDown({ options }: { options: string[] }) {
             }}
           >
             {selectOption}
-            {isVisible ? <S.Icon /> : <ExpandMoreIcon />}
+            <S.Icon $shouldRotate={isVisible} />
           </S.SelectedOption>
 
           {isVisible && content}
