@@ -1,7 +1,7 @@
 "use client";
-import { Button } from "@/components/Button";
+import { Button } from "@/components/Buttons/Button";
+import IconButton from "@/components/Buttons/IconButton";
 import DropDown from "@/components/DropDown";
-import IconButton from "@/components/IconButton";
 import Input from "@/components/Input";
 import { PaginationIcon } from "@/components/Pagination/PaginationIcon";
 

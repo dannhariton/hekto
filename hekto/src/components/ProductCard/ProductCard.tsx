@@ -4,7 +4,7 @@ import perfumeImg from "../../../public/images/perfume.png";
 import psImg from "../../../public/images/ps4.jpg";
 import watchesImg from "../../../public/images/watch.jpg";
 
-import { Button } from "../Button";
+import { Button } from "../Buttons/Button";
 import Icons from "./components/Icons";
 import Stars from "./components/Stars";
 import { S } from "./styles";

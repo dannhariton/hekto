@@ -6,7 +6,7 @@ import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 
 import SearchIcon from "@mui/icons-material/Search";
 import styled from "styled-components";
-import { Button } from "./Button";
+import { Button } from "./Buttons/Button";
 
 type Variant = "COMPLEX" | "DEFAULT";
 

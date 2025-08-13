@@ -1,6 +1,6 @@
 import { rem } from "@/utils/remConvert";
 import styled from "styled-components";
-import { colors } from "../styles/colors";
+import { colors } from "../../styles/colors";
 
 const IconButton = styled.button<{ $background?: boolean }>`
   background-color: ${({ $background }) =>

@@ -2,7 +2,7 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import ZoomInOutlinedIcon from "@mui/icons-material/ZoomInOutlined";
 import styled from "styled-components";
-import IconButton from "../../IconButton";
+import IconButton from "../../Buttons/IconButton";
 
 type Direction = "ROW" | "COLUMN";
 
