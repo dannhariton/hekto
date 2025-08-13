@@ -3,7 +3,9 @@ import { Button } from "@/components/Button";
 import DropDown from "@/components/DropDown";
 import IconButton from "@/components/IconButton";
 import Input from "@/components/Input";
-import PaginationInput from "@/components/PaginationInput";
+import { PaginationIcon } from "@/components/Pagination/PaginationIcon";
+
+import PaginationInput from "@/components/Pagination/PaginationInput";
 import Stars from "@/components/ProductCard/components/Stars";
 import FeaturedCard from "@/components/ProductCard/ProductCard";
 import { GlobalStyle } from "@/styles/globalStyle";
@@ -30,7 +32,23 @@ export default function Page() {
 
       <Input variant="COMPLEX" />
       <Input variant="DEFAULT" />
+
       <PaginationInput page={1} />
+      <PaginationIcon variant="DIAMOND" $filled />
+      <PaginationIcon variant="DIAMOND" />
+      <PaginationIcon variant="DIAMOND" />
+
+      <br />
+
+      <PaginationIcon variant="LINE" $filled />
+      <PaginationIcon variant="LINE" />
+      <PaginationIcon variant="LINE" />
+      <PaginationIcon variant="LINE" />
+
+      <br />
+      <PaginationIcon variant="CIRCLE" $filled />
+      <PaginationIcon variant="CIRCLE" />
+      <PaginationIcon variant="CIRCLE" />
 
       <DropDown
         options={["Best Match", "Most Popular", "Price Higher", "Price Lower"]}
