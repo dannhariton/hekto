@@ -1,5 +1,6 @@
 export const colors = {
   WHITE: "#ffffff",
+  GREY_WHITE_SHADE: "#F1F1F1",
   GREY_1: "#F8F8FD",
   GREY_2: "#E5E0FC",
   GREY_3: "#8A8FB9",
