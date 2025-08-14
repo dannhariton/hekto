@@ -42,6 +42,10 @@ body {
 }
 
 /* A elements that don't have a class get default styles */
+a{
+  text-decoration: none;
+}
+
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }
