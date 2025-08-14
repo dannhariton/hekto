@@ -12,7 +12,7 @@ type Variant = "COMPLEX" | "DEFAULT";
 
 const S = {
   Container: styled.div`
-    min-width: ${rem(328)};
+    width: ${rem(328)};
     height: ${rem(40)};
     border: ${rem(1)} solid ${colors.GREY_2};
     padding: ${rem(1)};
