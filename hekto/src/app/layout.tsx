@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { Josefin_Sans } from "next/font/google";
+import StyledComponentsRegistry from "./_registry";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
@@ -17,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={josefin.className}>{children}</body>
+      <body className={josefin.className}>
+        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+      </body>
     </html>
   );
 }
