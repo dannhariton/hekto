@@ -121,12 +121,10 @@ const content = {
   ),
 };
 
-const FeaturedCard = ({ $variant }: { $variant: Variant }) => {
+export const ProductCard = ({ $variant }: { $variant: Variant }) => {
   return (
     <S.Container href="/" $variant={$variant}>
       {content[$variant]}
     </S.Container>
   );
 };
-
-export default FeaturedCard;
