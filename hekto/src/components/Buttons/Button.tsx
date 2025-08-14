@@ -1,7 +1,7 @@
+import { colors } from "@/styles/colors";
 import { typography } from "@/styles/typography";
 import { rem } from "@/utils/remConvert";
 import styled, { css, RuleSet } from "styled-components";
-import { colors } from "../styles/colors";
 
 type Variant = "DEFAULT" | "ICON" | "SUCCESS";
 type Styles = Record<Variant, RuleSet>;
