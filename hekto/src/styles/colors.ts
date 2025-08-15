@@ -1,9 +1,13 @@
 export const colors = {
   WHITE: "#ffffff",
+  LAVENDER_WHITE: "#EEEFFB",
   GREY_WHITE_SHADE: "#F1F1F1",
   GREY_1: "#F8F8FD",
   GREY_2: "#E5E0FC",
   GREY_3: "#8A8FB9",
+  GREY_4: "#E7E4F8",
+  GREY_5: "#9DA0AE",
+  BLUE: "#151875",
   BLACK: "#101750",
   BLACK_RGB: "16, 23, 80",
   PRIMARY: "#FB2E86",

@@ -1,5 +1,5 @@
 "use client";
-
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { Josefin_Sans } from "next/font/google";
 
@@ -17,6 +17,7 @@ export default function RootLayout({
       <body className={josefin.className}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
