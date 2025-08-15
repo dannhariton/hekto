@@ -6,8 +6,8 @@ import Input from "@/components/Input";
 import { PaginationIcon } from "@/components/Pagination/PaginationIcon";
 
 import PaginationInput from "@/components/Pagination/PaginationInput";
+import { ProductCard } from "@/components/ProductCard";
 import Stars from "@/components/ProductCard/components/Stars";
-import FeaturedCard from "@/components/ProductCard/ProductCard";
 import { GlobalStyle } from "@/styles/globalStyle";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
@@ -54,12 +54,12 @@ export default function Page() {
         options={["Best Match", "Most Popular", "Price Higher", "Price Lower"]}
       />
 
-      <FeaturedCard $variant="FEATURED" />
-      <FeaturedCard $variant="LATEST" />
-      <FeaturedCard $variant="TRENDING" />
-      <FeaturedCard $variant="CATEGORY" />
-      <FeaturedCard $variant="LIST" />
-      <FeaturedCard $variant="GRID" />
+      <ProductCard $variant="FEATURED" />
+      <ProductCard $variant="LATEST" />
+      <ProductCard $variant="TRENDING" />
+      <ProductCard $variant="CATEGORY" />
+      <ProductCard $variant="LIST" />
+      <ProductCard $variant="GRID" />
     </>
   );
 }
