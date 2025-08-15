@@ -44,6 +44,7 @@ export const Button = styled.button<{
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  white-space: nowrap;
   ${typography.subtitleExtraSmall}
 
   ${({ $variant }) => styles[$variant]}
