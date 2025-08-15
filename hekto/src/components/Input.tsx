@@ -67,10 +67,11 @@ const content = {
   ),
   DEFAULT: (
     <>
-      <S.Input type="email" placeholder="Search" />
+      <S.Input type="email" placeholder="Enter email" />
       <S.ErrorIconContainer>
         <ErrorOutlineIcon fontSize="small" />
       </S.ErrorIconContainer>
+      <Button $variant="DEFAULT">Sign Up</Button>
     </>
   ),
 };
