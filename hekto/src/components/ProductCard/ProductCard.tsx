@@ -1,91 +1,96 @@
 import Image from "next/image";
-import laptopImg from "../../../public/images/laptop.png";
-import perfumeImg from "../../../public/images/perfume.png";
-import psImg from "../../../public/images/ps4.jpg";
-import watchesImg from "../../../public/images/watch.jpg";
-
+import { ReactNode } from "react";
 import { Button } from "../Buttons/Button";
 import Icons from "./components/Icons";
 import Stars from "./components/Stars";
 import { S } from "./styles";
-import { Variant } from "./types";
+import { Product, Variant } from "./types";
 
-const content = {
-  FEATURED: (
+const content: Record<Variant, (product: Product) => ReactNode> = {
+  FEATURED: ({ name, code, price, thumbnail }) => (
     <>
       <S.ProductImage>
         <S.IconsContainer>
           <Icons $direction="ROW" />
           <Button $variant="SUCCESS">View Details</Button>
         </S.IconsContainer>
-        <Image src={watchesImg} alt="product image" priority={true} />
+        <Image
+          width={200}
+          height={200}
+          src={thumbnail}
+          alt="product image"
+          priority={true}
+        />
       </S.ProductImage>
-      <S.Title>Watches</S.Title>
-      <S.Code>Code - Y523201</S.Code>
-      <S.Price>$42.00</S.Price>
+      <S.Title>{name}</S.Title>
+      <S.Code>Code - {code}</S.Code>
+      <S.Price>${price}</S.Price>
     </>
   ),
-  LATEST: (
+  LATEST: ({ name, wasPrice, price, thumbnail }) => (
     <>
       <S.ProductImage>
         <S.IconsContainer>
           <Icons $direction="COLUMN" />
         </S.IconsContainer>
-        <Image src={laptopImg} alt="product image" priority={true} />
+        <Image
+          width={200}
+          height={200}
+          src={thumbnail}
+          alt="product image"
+          priority={true}
+        />
       </S.ProductImage>
       <S.FlexContainer>
-        <S.Title>Laptop</S.Title>
+        <S.Title>{name}</S.Title>
         <S.PriceContainer>
-          <S.Price>$42.00</S.Price>
-          <S.OldPrice>$99.00</S.OldPrice>
+          <S.Price>${price}</S.Price>
+          <S.OldPrice>{wasPrice}</S.OldPrice>
         </S.PriceContainer>
       </S.FlexContainer>
     </>
   ),
-  TRENDING: (
+  TRENDING: ({ name, wasPrice, price, thumbnail }) => (
     <>
       <S.ProductImage>
-        <Image src={psImg} alt="product image" />
+        <Image width={200} height={200} src={thumbnail} alt="product image" />{" "}
       </S.ProductImage>
       <S.FlexContainer>
-        <S.Title>Laptop</S.Title>
+        <S.Title>{name}</S.Title>
         <S.PriceContainer>
-          <S.Price>$42.00</S.Price>
-          <S.OldPrice>$99.00</S.OldPrice>
+          <S.Price>${price}</S.Price>
+          <S.OldPrice>${wasPrice}</S.OldPrice>
         </S.PriceContainer>
       </S.FlexContainer>
     </>
   ),
-  CATEGORY: (
+  CATEGORY: ({ name, thumbnail }) => (
     <>
       <S.ProductImage>
         <S.IconsContainer>
           <Button $variant="SUCCESS">View Details</Button>
         </S.IconsContainer>
-        <Image src={perfumeImg} alt="product image" />
+        <Image width={200} height={200} src={thumbnail} alt="product image" />{" "}
       </S.ProductImage>
-      <S.Title>Scelerisque dignissim</S.Title>
+      <S.Title>{name}</S.Title>
     </>
   ),
-  LIST: (
+  LIST: ({ name, wasPrice, price, thumbnail, description, rating }) => (
     <>
       <S.ProductImage>
-        <Image src={perfumeImg} alt="product image" />
+        <Image width={200} height={200} src={thumbnail} alt="product image" />{" "}
       </S.ProductImage>
 
       <S.FlexContainer>
         <S.ProductContent>
-          <S.Title>Scelerisque dignissim</S.Title>
+          <S.Title>{name}</S.Title>
           <S.PriceContainer>
-            <S.Price>$42.00</S.Price>
-            <S.OldPrice>$99.00</S.OldPrice>
+            <S.Price>${price}</S.Price>
+            <S.OldPrice>${wasPrice}</S.OldPrice>
           </S.PriceContainer>
-          <S.Description>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in
-            est adipiscing in phasellus non in justo.
-          </S.Description>
+          <S.Description>{description}</S.Description>
           <S.Stars>
-            <Stars rating={4} />
+            <Stars rating={rating.value} />
           </S.Stars>
         </S.ProductContent>
 
@@ -93,25 +98,22 @@ const content = {
       </S.FlexContainer>
     </>
   ),
-  GRID: (
+  GRID: ({ name, wasPrice, price, thumbnail, description, rating }) => (
     <>
       <S.ProductImage>
-        <Image src={perfumeImg} alt="product image" />
+        <Image width={200} height={200} src={thumbnail} alt="product image" />{" "}
       </S.ProductImage>
 
       <S.ProductContent>
-        <S.Title>Scelerisque dignissim</S.Title>
+        <S.Title>{name}</S.Title>
         <S.Stars>
-          <Stars rating={4} />
+          <Stars rating={rating.value} />
         </S.Stars>
         <S.PriceContainer>
-          <S.Price>$42.00</S.Price>
-          <S.OldPrice>$99.00</S.OldPrice>
+          <S.Price>${price}</S.Price>
+          <S.OldPrice>${wasPrice}</S.OldPrice>
         </S.PriceContainer>
-        <S.Description>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est
-          adipiscing in phasellus non in justo.
-        </S.Description>
+        <S.Description>${description}</S.Description>
       </S.ProductContent>
 
       <S.IconsContainer>
@@ -121,10 +123,16 @@ const content = {
   ),
 };
 
-export const ProductCard = ({ $variant }: { $variant: Variant }) => {
+export const ProductCard = ({
+  $variant,
+  product,
+}: {
+  $variant: Variant;
+  product: Product;
+}) => {
   return (
     <S.Container href="/" $variant={$variant}>
-      {content[$variant]}
+      {content[$variant](product)}
     </S.Container>
   );
 };

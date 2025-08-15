@@ -76,6 +76,7 @@ const styles: Styles = {
       position: relative;
 
       img {
+        width: 100%;
         height: 100%;
         border-radius: ${rem(4)};
       }
@@ -129,6 +130,7 @@ const styles: Styles = {
       position: relative;
 
       img {
+        width: 100%;
         border-radius: ${rem(4)};
         height: 100%;
       }
@@ -244,6 +246,7 @@ const styles: Styles = {
         }
 
         img {
+          width: 100%;
           box-shadow: ${rem(8, 64, 80, -16)} rgba(${colors.BLACK_RGB}, 0.15);
         }
       }
