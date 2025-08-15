@@ -1,14 +1,14 @@
+import Input from "@/components/Input";
 import { colors } from "@/styles/colors";
 import { spacing } from "@/styles/spacing";
 import { typography } from "@/styles/typography";
 import { rem } from "@/utils/remConvert";
 import Link from "next/link";
 import styled from "styled-components";
-import Input from "../Input";
 import Copyright from "./components/Copyright";
 
 const S = {
-  FooterContent: styled.footer`
+  FooterContent: styled.div`
     background-color: ${colors.LAVENDER_WHITE};
     display: flex;
     padding: ${rem(95)} ${spacing.paddingMedium};
