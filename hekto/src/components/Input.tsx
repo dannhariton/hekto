@@ -54,6 +54,9 @@ const S = {
     color: ${colors.DANGER};
     padding: ${rem(12)};
   `,
+  Button: styled(Button)`
+    ${typography.subtitleExtraSmall}
+  `,
 };
 
 const content = {
@@ -71,7 +74,7 @@ const content = {
       <S.ErrorIconContainer>
         <ErrorOutlineIcon fontSize="small" />
       </S.ErrorIconContainer>
-      <Button $variant="DEFAULT">Sign Up</Button>
+      <S.Button $variant="ICON">Sign Up</S.Button>
     </>
   ),
 };
