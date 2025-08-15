@@ -11,6 +11,7 @@ import Stars from "@/components/ProductCard/components/Stars";
 import { GlobalStyle } from "@/styles/globalStyle";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { testProduct } from "./test-data";
 
 export default function Page() {
   return (
@@ -54,12 +55,12 @@ export default function Page() {
         options={["Best Match", "Most Popular", "Price Higher", "Price Lower"]}
       />
 
-      <ProductCard $variant="FEATURED" />
-      <ProductCard $variant="LATEST" />
-      <ProductCard $variant="TRENDING" />
-      <ProductCard $variant="CATEGORY" />
-      <ProductCard $variant="LIST" />
-      <ProductCard $variant="GRID" />
+      <ProductCard product={testProduct} $variant="FEATURED" />
+      <ProductCard product={testProduct} $variant="LATEST" />
+      <ProductCard product={testProduct} $variant="TRENDING" />
+      <ProductCard product={testProduct} $variant="CATEGORY" />
+      <ProductCard product={testProduct} $variant="LIST" />
+      <ProductCard product={testProduct} $variant="GRID" />
     </>
   );
 }
