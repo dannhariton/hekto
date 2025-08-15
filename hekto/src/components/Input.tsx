@@ -54,6 +54,9 @@ const S = {
     color: ${colors.DANGER};
     padding: ${rem(12)};
   `,
+  Button: styled(Button)`
+    ${typography.subtitleExtraSmall}
+  `,
 };
 
 const content = {
@@ -67,10 +70,11 @@ const content = {
   ),
   DEFAULT: (
     <>
-      <S.Input type="email" placeholder="Search" />
+      <S.Input type="email" placeholder="Enter email" />
       <S.ErrorIconContainer>
         <ErrorOutlineIcon fontSize="small" />
       </S.ErrorIconContainer>
+      <S.Button $variant="ICON">Sign Up</S.Button>
     </>
   ),
 };
