@@ -1,11 +1,17 @@
 "use client";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { Josefin_Sans } from "next/font/google";
+import { Josefin_Sans, Lato } from "next/font/google";
 import StyledComponentsRegistry from "./_registry";
 
 const josefin = Josefin_Sans({
   subsets: ["latin"],
+});
+
+const lato = Lato({
+  subsets: ["latin"],
+  weight: ["100", "400"],
+  variable: "--font-lato",
 });
 
 export default function RootLayout({
@@ -15,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={josefin.className}>
+      <body className={`${josefin.className} ${lato.variable}`}>
         <StyledComponentsRegistry>
           <Header />
           {children}

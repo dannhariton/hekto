@@ -1,6 +1,10 @@
 import { rem } from "@/utils/remConvert";
 import { css } from "styled-components";
 
+const SecondaryFont = css`
+  font-family: var(--font-lato);
+`;
+
 export const typography = {
   H1: css`
     font-weight: 700;
@@ -39,18 +43,22 @@ export const typography = {
     font-size: ${rem(26)};
   `,
   bodySmall: css`
+    ${SecondaryFont}
     font-weight: 400;
     font-size: ${rem(14)};
   `,
   bodyLarge: css`
+    ${SecondaryFont}
     font-weight: 400;
     font-size: ${rem(18)};
   `,
   bodyDefault: css`
+    ${SecondaryFont}
     font-weight: 400;
     font-size: ${rem(16)};
   `,
   bodyBold: css`
+    ${SecondaryFont}
     font-weight: 700;
     font-size: ${rem(16)};
   `,
