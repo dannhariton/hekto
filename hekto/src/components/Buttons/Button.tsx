@@ -11,7 +11,6 @@ const styles: Styles = {
     background-color: ${colors.PRIMARY};
     padding: ${rem(16, 40)};
     border-radius: ${rem(8)};
-    min-width: ${rem(150)};
 
     &:hover {
       background-color: ${colors.PRIMARY_DARK};
@@ -45,6 +44,7 @@ export const Button = styled.button<{
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  white-space: nowrap;
   ${typography.subtitleExtraSmall}
 
   ${({ $variant }) => styles[$variant]}
