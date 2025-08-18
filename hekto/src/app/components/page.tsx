@@ -8,14 +8,12 @@ import { PaginationIcon } from "@/components/Pagination/PaginationIcon";
 import PaginationInput from "@/components/Pagination/PaginationInput";
 import { ProductCard } from "@/components/ProductCard";
 import Stars from "@/components/ProductCard/components/Stars";
-import { GlobalStyle } from "@/styles/globalStyle";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 export default function Page() {
   return (
     <>
-      <GlobalStyle />
       <Button $variant="DEFAULT">Shop Now</Button>
       <Button $variant="SUCCESS">Shop Now</Button>
       <Button $variant="ICON">

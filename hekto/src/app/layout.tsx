@@ -1,6 +1,7 @@
 "use client";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { GlobalStyle } from "@/styles/globalStyle";
 import { Josefin_Sans, Lato } from "next/font/google";
 import StyledComponentsRegistry from "./_registry";
 
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${josefin.className} ${lato.variable}`}>
         <StyledComponentsRegistry>
+          <GlobalStyle />
           <Header />
           {children}
           <Footer />
