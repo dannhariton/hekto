@@ -1,5 +1,5 @@
 import { breakpoints } from "@/styles/breakpoints";
-import { rem } from "@/utils/remConvert";
+import { spacing } from "@/styles/spacing";
 import styled from "styled-components";
 
 export const MaxWidthWrapper = styled.div`
@@ -9,5 +9,5 @@ export const MaxWidthWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding: 0 ${rem(60)};
+  padding: 0 ${spacing.paddingSmall};
 `;
