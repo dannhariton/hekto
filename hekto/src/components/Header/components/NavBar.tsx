@@ -1,5 +1,5 @@
 import Input from "@/components/Input";
-import { MaxWidthComponent } from "@/components/MaxWIdthComponent";
+import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
 import { colors } from "@/styles/colors";
 import { typography } from "@/styles/typography";
 import { rem } from "@/utils/remConvert";
@@ -31,7 +31,7 @@ const S = {
 function NavBar() {
   return (
     <S.Container>
-      <MaxWidthComponent>
+      <MaxWidthWrapper>
         <S.NavLeftSide>
           <S.Logo href="/">Hekto</S.Logo>
           <S.NavLinksContainer>
@@ -42,7 +42,7 @@ function NavBar() {
           </S.NavLinksContainer>
         </S.NavLeftSide>
         <Input $variant="COMPLEX" />
-      </MaxWidthComponent>
+      </MaxWidthWrapper>
     </S.Container>
   );
 }

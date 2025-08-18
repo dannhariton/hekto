@@ -1,10 +1,10 @@
 import Input from "@/components/Input";
+import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
 import { colors } from "@/styles/colors";
 import { typography } from "@/styles/typography";
 import { rem } from "@/utils/remConvert";
 import Link from "next/link";
 import styled from "styled-components";
-import { MaxWidthComponent } from "../MaxWIdthComponent";
 import Copyright from "./components/Copyright";
 
 const S = {
@@ -46,7 +46,7 @@ export function Footer() {
   return (
     <footer>
       <S.FooterContent>
-        <MaxWidthComponent>
+        <MaxWidthWrapper>
           <S.FooterLeftSide>
             <S.Logo href="/">Hekto</S.Logo>
             <Input $variant="DEFAULT" />
@@ -79,7 +79,7 @@ export function Footer() {
             <S.Link href="/">Pre-Built Pages</S.Link>
             <S.Link href="/">Visual Composer Elements</S.Link>
           </S.List>
-        </MaxWidthComponent>
+        </MaxWidthWrapper>
       </S.FooterContent>
       <Copyright />
     </footer>

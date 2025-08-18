@@ -1,4 +1,4 @@
-import { MaxWidthComponent } from "@/components/MaxWIdthComponent";
+import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
 import { colors } from "@/styles/colors";
 import { typography } from "@/styles/typography";
 import { rem } from "@/utils/remConvert";
@@ -33,7 +33,7 @@ const S = {
 function Copyright() {
   return (
     <S.Container>
-      <MaxWidthComponent>
+      <MaxWidthWrapper>
         ©Webecy - All Rights Reserved
         <S.Socials>
           <S.SocialLink href="/">
@@ -46,7 +46,7 @@ function Copyright() {
             <Twitter sx={{ fontSize: 14 }} />
           </S.SocialLink>
         </S.Socials>
-      </MaxWidthComponent>
+      </MaxWidthWrapper>
     </S.Container>
   );
 }

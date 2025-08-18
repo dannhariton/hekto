@@ -1,4 +1,4 @@
-import { MaxWidthComponent } from "@/components/MaxWIdthComponent";
+import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
 import { colors } from "@/styles/colors";
 import { typography } from "@/styles/typography";
 import { rem } from "@/utils/remConvert";
@@ -50,7 +50,7 @@ const S = {
 function TopBar() {
   return (
     <S.Container>
-      <MaxWidthComponent>
+      <MaxWidthWrapper>
         <S.Contacts>
           <S.Contact href="mailto:mhhasanul@gmail.com">
             <MailOutlineRounded fontSize="small" />
@@ -83,7 +83,7 @@ function TopBar() {
             <ShoppingCartOutlined fontSize="small" />
           </S.MenuLink>
         </S.Menu>
-      </MaxWidthComponent>
+      </MaxWidthWrapper>
     </S.Container>
   );
 }
