@@ -1,6 +1,6 @@
 import Input from "@/components/Input";
+import { MaxWidthComponent } from "@/components/MaxWIdthComponent";
 import { colors } from "@/styles/colors";
-import { spacing } from "@/styles/spacing";
 import { typography } from "@/styles/typography";
 import { rem } from "@/utils/remConvert";
 import Link from "next/link";
@@ -11,10 +11,6 @@ const S = {
   Container: styled.div`
     background-color: ${colors.WHITE};
     height: ${rem(72)};
-    padding: 0 ${spacing.paddingMedium};
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
   `,
   Logo: styled(Link)`
     display: flex;
@@ -35,16 +31,18 @@ const S = {
 function NavBar() {
   return (
     <S.Container>
-      <S.NavLeftSide>
-        <S.Logo href="/">Hekto</S.Logo>
-        <S.NavLinksContainer>
-          <NavLink href="/">Home</NavLink>
-          <NavLink href="/products">Products</NavLink>
-          <NavLink href="/blog">Blog</NavLink>
-          <NavLink href="/contact">Contact</NavLink>
-        </S.NavLinksContainer>
-      </S.NavLeftSide>
-      <Input $variant="COMPLEX" />
+      <MaxWidthComponent>
+        <S.NavLeftSide>
+          <S.Logo href="/">Hekto</S.Logo>
+          <S.NavLinksContainer>
+            <NavLink href="/">Home</NavLink>
+            <NavLink href="/products">Products</NavLink>
+            <NavLink href="/blog">Blog</NavLink>
+            <NavLink href="/contact">Contact</NavLink>
+          </S.NavLinksContainer>
+        </S.NavLeftSide>
+        <Input $variant="COMPLEX" />
+      </MaxWidthComponent>
     </S.Container>
   );
 }
