@@ -28,3 +28,5 @@ export const breakpoints = {
    */
   xxx: 120,
 } as const;
+
+export type Breakpoints = keyof typeof breakpoints;
