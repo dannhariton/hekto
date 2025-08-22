@@ -1,0 +1,49 @@
+"use client";
+import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
+import { colors } from "@/styles/colors";
+import { typography } from "@/styles/typography";
+import { rem } from "@/utils/remConvert";
+import { useState } from "react";
+import styled from "styled-components";
+import TopSideFilters from "./_components/GroupingFilters";
+import LeftSideFilters from "./_components/ProductsFilters";
+import ProductsList from "./_components/ProductsLIst";
+
+const S = {
+  Container: styled.div``,
+  Header: styled.h1`
+    ${typography.H1}
+    color: ${colors.BLACK};
+    text-align: center;
+    padding: ${rem(60)} 0 ${rem(80)};
+  `,
+  Content: styled.div`
+    display: flex;
+    margin: ${rem(32)} 0;
+    gap: ${rem(32)};
+    align-items: flex-start;
+  `,
+};
+
+function ProductsPage() {
+  const [isList, setIsList] = useState(true);
+
+  function handleSetIsList() {
+    setIsList((prev) => !prev);
+  }
+
+  return (
+    <MaxWidthWrapper>
+      <S.Container>
+        <S.Header>Products</S.Header>
+        <TopSideFilters isList={isList} setIsList={handleSetIsList} />
+        <S.Content>
+          <LeftSideFilters />
+          <ProductsList isList={isList} />
+        </S.Content>
+      </S.Container>
+    </MaxWidthWrapper>
+  );
+}
+
+export default ProductsPage;
