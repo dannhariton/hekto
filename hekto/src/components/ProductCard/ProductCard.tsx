@@ -88,7 +88,15 @@ const content: Record<Variant, (product: Product) => ReactNode> = {
             <S.Price>${price}</S.Price>
             <S.OldPrice>${wasPrice}</S.OldPrice>
           </S.PriceContainer>
-          <S.Description>{description}</S.Description>
+          <S.Description>
+            {" "}
+            {description
+              .split(" ")
+              .map((word, index) =>
+                index === 0 ? word[0].toUpperCase() + word.slice(1) : word
+              )
+              .join(" ")}
+          </S.Description>
           <S.Stars>
             <Stars rating={rating.value} />
           </S.Stars>
@@ -113,7 +121,14 @@ const content: Record<Variant, (product: Product) => ReactNode> = {
           <S.Price>${price}</S.Price>
           <S.OldPrice>${wasPrice}</S.OldPrice>
         </S.PriceContainer>
-        <S.Description>${description}</S.Description>
+        <S.Description>
+          {description
+            .split(" ")
+            .map((word, index) =>
+              index === 0 ? word[0].toUpperCase() + word.slice(1) : word
+            )
+            .join(" ")}
+        </S.Description>
       </S.ProductContent>
 
       <S.IconsContainer>
@@ -124,15 +139,15 @@ const content: Record<Variant, (product: Product) => ReactNode> = {
 };
 
 export const ProductCard = ({
-  $variant,
+  variant,
   product,
 }: {
-  $variant: Variant;
+  variant: Variant;
   product: Product;
 }) => {
   return (
-    <S.Container href="/" $variant={$variant}>
-      {content[$variant](product)}
+    <S.Container href="/" $variant={variant}>
+      {content[variant](product)}
     </S.Container>
   );
 };

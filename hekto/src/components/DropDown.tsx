@@ -18,7 +18,7 @@ const S = {
     }};
     transition: transform 0.1s;
   `,
-  SelectedOption: styled.button`
+  SelectedOption: styled.button<{ $width: number }>`
     color: ${colors.BLACK};
     background-color: ${colors.WHITE};
     border: ${rem(1)} solid ${colors.GREY_2};
@@ -27,7 +27,7 @@ const S = {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    width: ${({ $width }) => rem($width)};
     ${typography.bodySmall}
   `,
   Option: styled.button`
@@ -51,11 +51,15 @@ const S = {
     padding: ${rem(8, 0)};
     margin-top: ${rem(4)};
     display: flex;
+    width: 100%;
     flex-direction: column;
+  `,
+  DropDownContainer: styled.div`
+    position: relative;
   `,
 };
 
-function DropDown({ options }: { options: string[] }) {
+function DropDown({ options, $width }: { options: string[]; $width: number }) {
   const [isVisible, setIsVisible] = useState(false);
   const [selectOption, setSelectedOption] = useState(options[0]);
   const handleClickAway = () => setIsVisible(false);
@@ -81,8 +85,9 @@ function DropDown({ options }: { options: string[] }) {
   return (
     <>
       <ClickAwayListener onClickAway={handleClickAway}>
-        <div>
+        <S.DropDownContainer>
           <S.SelectedOption
+            $width={$width}
             onClick={() => {
               setIsVisible((prev) => !prev);
             }}
@@ -92,7 +97,7 @@ function DropDown({ options }: { options: string[] }) {
           </S.SelectedOption>
 
           {isVisible && content}
-        </div>
+        </S.DropDownContainer>
       </ClickAwayListener>
     </>
   );
