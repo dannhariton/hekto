@@ -10,7 +10,7 @@ import {
   RadioGroup,
 } from "@mui/material";
 import { ReactNode } from "react";
-import Stars from "../ProductCard/components/Stars";
+import Stars from "../Stars";
 import RangeSlider from "./PriceRange";
 import { S } from "./styles";
 import { Filter, FilterData } from "./types";
