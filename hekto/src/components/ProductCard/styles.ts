@@ -166,22 +166,25 @@ const styles: Styles = {
     }
   `,
   TRENDING: css`
-    width: ${rem(304)};
+    width: calc(100% - (rem(32) * 3) / 4);
     background-color: ${colors.WHITE};
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: ${rem(8)};
     box-shadow: ${rem(8, 24, 32, -16)} rgba(${colors.BLACK_RGB}, 0.15);
-
+    transition: all 0.3s;
     &:hover,
     &:focus {
+      transform: translateY(${rem(-24)});
+
       box-shadow: ${rem(8, 64, 80, -16)} rgba(${colors.BLACK_RGB}, 0.15);
     }
 
     ${S.ProductImage} {
-      width: ${rem(272)};
-      height: ${rem(232)};
+      padding: ${rem(16)};
+      width: 100%;
+      aspect-ratio: 1.17/1;
       position: relative;
       margin-top: ${rem(12)};
 
@@ -195,7 +198,7 @@ const styles: Styles = {
 
     ${S.FlexContainer} {
       width: 100%;
-      margin-top: ${rem(12)};
+      margin-top: ${rem(8)};
       display: flex;
       flex-direction: column;
       align-items: center;
