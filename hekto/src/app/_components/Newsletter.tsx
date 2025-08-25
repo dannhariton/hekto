@@ -7,6 +7,7 @@ import styled from "styled-components";
 
 const S = {
   Newsletter: styled.section`
+    margin-top: ${rem(100)};
     width: 100%;
     background-image: url("/images/newsletter-bg.png");
     background-repeat: no-repeat;
