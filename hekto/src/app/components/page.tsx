@@ -7,7 +7,7 @@ import { PaginationIcon } from "@/components/Pagination/PaginationIcon";
 
 import PaginationInput from "@/components/Pagination/PaginationInput";
 import { ProductCard } from "@/components/ProductCard";
-import Stars from "@/components/ProductCard/components/Stars";
+import Stars from "@/components/Stars";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { testProduct } from "./test-data";

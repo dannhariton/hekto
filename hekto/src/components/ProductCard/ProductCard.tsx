@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { ReactNode } from "react";
 import { Button } from "../Buttons/Button";
+import Stars from "../Stars";
 import Icons from "./components/Icons";
-import Stars from "./components/Stars";
 import { S } from "./styles";
 import { Product, Variant } from "./types";
 
