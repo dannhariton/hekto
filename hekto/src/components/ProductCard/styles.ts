@@ -1,5 +1,6 @@
 import { colors } from "@/styles/colors";
 import { typography } from "@/styles/typography";
+import { media } from "@/utils/media";
 import { rem } from "@/utils/remConvert";
 import Link from "next/link";
 import styled, { css, RuleSet } from "styled-components";
@@ -304,10 +305,12 @@ const styles: Styles = {
     background-color: ${colors.WHITE};
     display: flex;
     align-items: center;
+    box-shadow: ${rem(8, 24, 32, -16)} rgba(${colors.BLACK_RGB}, 0.15); //fix this in a fix branch
 
     &:hover,
     &:focus {
       box-shadow: ${rem(8, 64, 80, -16)} rgba(${colors.BLACK_RGB}, 0.15);
+      z-index: 12;
     }
 
     ${S.ProductImage} {
@@ -328,6 +331,7 @@ const styles: Styles = {
 
     ${S.ProductContent} {
       margin-bottom: ${rem(37)};
+      margin-right: ${rem(24)};
       position: relative;
       display: flex;
       flex-direction: column;
@@ -370,22 +374,31 @@ const styles: Styles = {
     }
   `,
   GRID: css`
-    width: ${rem(304)};
+    width: 100%;
     background-color: ${colors.WHITE};
     display: flex;
     flex-direction: column;
 
-    margin-bottom: ${rem(64)};
+    box-shadow: ${rem(8, 24, 32, -16)} rgba(${colors.BLACK_RGB}, 0.15); //fix this in a fix branch
 
     &:hover,
     &:focus {
       box-shadow: ${rem(8, 64, 80, -16)} rgba(${colors.BLACK_RGB}, 0.15);
+      z-index: 10;
+    }
+
+    @media ${media.greaterThan("md")} {
+      width: calc((100% - ${rem(16)}) / 2);
+    }
+
+    @media ${media.greaterThan("lg")} {
+      width: calc((100% - ${rem(24)} * 2) / 3);
     }
 
     ${S.ProductImage} {
-      width: ${rem(288)};
-      height: ${rem(200)};
-      margin: ${rem(8, 8, 16, 8)};
+      width: 100%;
+      aspect-ratio: 36/25;
+      padding: ${rem(8, 8, 16, 8)};
 
       img {
         border-radius: ${rem(4)};
