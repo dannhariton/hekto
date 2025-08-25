@@ -233,9 +233,12 @@ const styles: Styles = {
     flex-direction: column;
     align-items: center;
 
+    transition: all 0.3s;
     &:hover,
     &:focus,
     &:focus-within {
+      transform: translateY(${rem(-24)});
+
       ${S.IconsContainer} {
         opacity: 1;
       }
