@@ -3,11 +3,7 @@ import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
 import { colors } from "@/styles/colors";
 import { typography } from "@/styles/typography";
 import { rem } from "@/utils/remConvert";
-import { useState } from "react";
 import styled from "styled-components";
-import TopSideFilters from "./_components/GroupingFilters";
-import LeftSideFilters from "./_components/ProductsFilters";
-import ProductsList from "./_components/ProductsLIst";
 
 const S = {
   Container: styled.div``,
@@ -26,21 +22,11 @@ const S = {
 };
 
 function ProductsPage() {
-  const [isList, setIsList] = useState(true);
-
-  function handleSetIsList() {
-    setIsList((prev) => !prev);
-  }
-
   return (
     <MaxWidthWrapper>
       <S.Container>
         <S.Header>Products</S.Header>
-        <TopSideFilters isList={isList} setIsList={handleSetIsList} />
-        <S.Content>
-          <LeftSideFilters />
-          <ProductsList isList={isList} />
-        </S.Content>
+        <S.Content></S.Content>
       </S.Container>
     </MaxWidthWrapper>
   );
