@@ -22,7 +22,7 @@ const S = {
   `,
 };
 
-function LeftSideFilters() {
+function ProductsFilters() {
   return (
     <S.Div>
       <FilterAccordion filterData={data.brand} />
@@ -35,4 +35,4 @@ function LeftSideFilters() {
   );
 }
 
-export default LeftSideFilters;
+export default ProductsFilters;
