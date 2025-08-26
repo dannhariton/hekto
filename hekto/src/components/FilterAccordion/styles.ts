@@ -1,12 +1,4 @@
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Box,
-  FormControlLabel,
-  FormGroup,
-  RadioGroup,
-} from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import styled from "styled-components";
 
 import { colors } from "@/styles/colors";
@@ -33,8 +25,4 @@ export const S = {
     max-height: ${rem(400)};
     overflow: scroll;
   `,
-  RadioGroup: styled(RadioGroup)``,
-  FormGroup: styled(FormGroup)``,
-  FormControlLabel: styled(FormControlLabel)``,
-  Box: styled(Box)``,
 };
