@@ -4,6 +4,7 @@ import { colors } from "@/styles/colors";
 import { typography } from "@/styles/typography";
 import { rem } from "@/utils/remConvert";
 import styled from "styled-components";
+import ProductsFilters from "./_components/ProductsFilters";
 
 const S = {
   Container: styled.div``,
@@ -26,7 +27,9 @@ function ProductsPage() {
     <MaxWidthWrapper>
       <S.Container>
         <S.Header>Products</S.Header>
-        <S.Content></S.Content>
+        <S.Content>
+          <ProductsFilters />
+        </S.Content>
       </S.Container>
     </MaxWidthWrapper>
   );
