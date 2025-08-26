@@ -10,7 +10,7 @@ import { ProductCard } from "@/components/ProductCard";
 import Stars from "@/components/ProductCard/components/Stars";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import { testProduct } from "./test-data";
+import { testProduct } from "../components/test-data";
 
 export default function Page() {
   return (
@@ -50,16 +50,16 @@ export default function Page() {
       <PaginationIcon $variant="CIRCLE" />
 
       <DropDown
-        $width={50}
         options={["Best Match", "Most Popular", "Price Higher", "Price Lower"]}
+        $width={300}
       />
 
-      <ProductCard product={testProduct} variant="FEATURED" />
-      <ProductCard product={testProduct} variant="LATEST" />
-      <ProductCard product={testProduct} variant="TRENDING" />
-      <ProductCard product={testProduct} variant="CATEGORY" />
-      <ProductCard product={testProduct} variant="LIST" />
-      <ProductCard product={testProduct} variant="GRID" />
+      <ProductCard variant="FEATURED" product={testProduct} />
+      <ProductCard variant="LATEST" product={testProduct} />
+      <ProductCard variant="TRENDING" product={testProduct} />
+      <ProductCard variant="CATEGORY" product={testProduct} />
+      <ProductCard variant="LIST" product={testProduct} />
+      <ProductCard variant="GRID" product={testProduct} />
     </>
   );
 }
