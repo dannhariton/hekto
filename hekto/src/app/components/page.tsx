@@ -53,12 +53,12 @@ export default function Page() {
         options={["Best Match", "Most Popular", "Price Higher", "Price Lower"]}
       />
 
-      <ProductCard product={testProduct} $variant="FEATURED" />
-      <ProductCard product={testProduct} $variant="LATEST" />
-      <ProductCard product={testProduct} $variant="TRENDING" />
-      <ProductCard product={testProduct} $variant="CATEGORY" />
-      <ProductCard product={testProduct} $variant="LIST" />
-      <ProductCard product={testProduct} $variant="GRID" />
+      <ProductCard product={testProduct} variant="FEATURED" />
+      <ProductCard product={testProduct} variant="LATEST" />
+      <ProductCard product={testProduct} variant="TRENDING" />
+      <ProductCard product={testProduct} variant="CATEGORY" />
+      <ProductCard product={testProduct} variant="LIST" />
+      <ProductCard product={testProduct} variant="GRID" />
     </>
   );
 }
