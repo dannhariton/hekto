@@ -59,7 +59,7 @@ const S = {
   `,
 };
 
-function DropDown({ options, $width }: { options: string[]; $width: number }) {
+function DropDown({ options, $width }: { options: string[]; $width?: number }) {
   const [isVisible, setIsVisible] = useState(false);
   const [selectOption, setSelectedOption] = useState(options[0]);
   const handleClickAway = () => setIsVisible(false);
