@@ -2,9 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 
 export const URL = "http://localhost:4000/products";
 
-export function useFetchProducts(options?: string) {
-  // if (options) {
-  // }
+export function useFetchProducts() {
   const { data, isPending, error } = useQuery({
     queryKey: ["product"],
     queryFn: async () => {

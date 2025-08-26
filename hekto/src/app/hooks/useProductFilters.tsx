@@ -11,7 +11,4 @@ export function useProductFilters() {
     currentParams.set(key, value); // Or .delete(), .append()
     router.replace(`${pathname}?${currentParams.toString()}`);
   };
-
-  // Example usage:
-  // <button onClick={() => updateParam('category', 'electronics')}>Filter</button>
 }
