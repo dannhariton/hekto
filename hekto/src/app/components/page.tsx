@@ -50,6 +50,7 @@ export default function Page() {
       <PaginationIcon $variant="CIRCLE" />
 
       <DropDown
+        $width={50}
         options={["Best Match", "Most Popular", "Price Higher", "Price Lower"]}
       />
 
