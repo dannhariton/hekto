@@ -44,7 +44,7 @@ const S = {
   `,
 };
 
-function TopSideFilters({
+function GroupingFilters({
   isList,
   setIsList,
 }: {
@@ -78,4 +78,4 @@ function TopSideFilters({
   );
 }
 
-export default TopSideFilters;
+export default GroupingFilters;
