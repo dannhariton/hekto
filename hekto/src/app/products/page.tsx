@@ -3,7 +3,9 @@ import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
 import { colors } from "@/styles/colors";
 import { typography } from "@/styles/typography";
 import { rem } from "@/utils/remConvert";
+import { useState } from "react";
 import styled from "styled-components";
+import ProductsList from "./_components/ProductsLIst";
 
 const S = {
   Container: styled.div``,
@@ -22,11 +24,15 @@ const S = {
 };
 
 function ProductsPage() {
+  const [isList, setIsList] = useState(true);
+
   return (
     <MaxWidthWrapper>
       <S.Container>
         <S.Header>Products</S.Header>
-        <S.Content></S.Content>
+        <S.Content>
+          <ProductsList isList={isList} />
+        </S.Content>
       </S.Container>
     </MaxWidthWrapper>
   );
