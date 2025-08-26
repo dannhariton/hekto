@@ -305,7 +305,7 @@ const styles: Styles = {
     background-color: ${colors.WHITE};
     display: flex;
     align-items: center;
-    box-shadow: ${rem(8, 24, 32, -16)} rgba(${colors.BLACK_RGB}, 0.15); //fix this in a fix branch
+    box-shadow: ${rem(8, 24, 32, -16)} rgba(${colors.BLACK_RGB}, 0.15);
 
     &:hover,
     &:focus {
@@ -379,7 +379,7 @@ const styles: Styles = {
     display: flex;
     flex-direction: column;
 
-    box-shadow: ${rem(8, 24, 32, -16)} rgba(${colors.BLACK_RGB}, 0.15); //fix this in a fix branch
+    box-shadow: ${rem(8, 24, 32, -16)} rgba(${colors.BLACK_RGB}, 0.15);
 
     &:hover,
     &:focus {
