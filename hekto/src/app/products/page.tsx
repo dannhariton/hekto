@@ -6,6 +6,7 @@ import { rem } from "@/utils/remConvert";
 import { useState } from "react";
 import styled from "styled-components";
 import GroupingFilters from "./_components/GroupingFilters";
+import ProductsFilters from "./_components/ProductsFilters";
 
 const S = {
   Container: styled.div``,
@@ -35,7 +36,9 @@ function ProductsPage() {
       <S.Container>
         <S.Header>Products</S.Header>
         <GroupingFilters isList={isList} setIsList={handleSetIsList} />
-        <S.Content></S.Content>
+        <S.Content>
+          <ProductsFilters />
+        </S.Content>
       </S.Container>
     </MaxWidthWrapper>
   );
