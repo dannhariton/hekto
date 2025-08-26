@@ -4,7 +4,6 @@ import IconButton from "@/components/Buttons/IconButton";
 import DropDown from "@/components/DropDown";
 import Input from "@/components/Input";
 import { PaginationIcon } from "@/components/Pagination/PaginationIcon";
-
 import PaginationInput from "@/components/Pagination/PaginationInput";
 import { ProductCard } from "@/components/ProductCard";
 import Stars from "@/components/Stars";

@@ -4,10 +4,9 @@ import styled from "styled-components";
 import { colors } from "@/styles/colors";
 import { typography } from "@/styles/typography";
 import { rem } from "@/utils/remConvert";
-import { Filter } from "./types";
 
 export const S = {
-  Container: styled.div<{ $type: Filter }>`
+  Container: styled.div`
     display: flex;
     flex-direction: column;
   `,

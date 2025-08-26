@@ -90,7 +90,7 @@ export function FilterAccordion({ filterData }: { filterData: FilterData }) {
   const type = filterData.type.toUpperCase() as Filter;
 
   return (
-    <S.Container $type={type}>
+    <S.Container>
       <S.Accordion>
         <S.AccordionSummary>{filterData.label}</S.AccordionSummary>
         <S.AccordionDetails>
