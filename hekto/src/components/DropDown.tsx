@@ -95,7 +95,6 @@ function DropDown({ options, $width }: { options: string[]; $width: number }) {
             {selectOption}
             <S.Icon $shouldRotate={isVisible} />
           </S.SelectedOption>
-
           {isVisible && content}
         </S.DropDownContainer>
       </ClickAwayListener>

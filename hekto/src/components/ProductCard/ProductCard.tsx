@@ -89,7 +89,6 @@ const content: Record<Variant, (product: Product) => ReactNode> = {
             <S.OldPrice>${wasPrice}</S.OldPrice>
           </S.PriceContainer>
           <S.Description>
-            {" "}
             {description
               .split(" ")
               .map((word, index) =>
