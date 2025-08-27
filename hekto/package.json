@@ -32,9 +32,6 @@
     "typescript": "^5"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": [
-      "eslint",
-      "npm run prettier"
-    ]
+    "src/**/*.{ts,tsx}": "eslint"
   }
 }
