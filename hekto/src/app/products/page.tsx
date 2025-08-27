@@ -3,11 +3,15 @@ import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
 import { colors } from "@/styles/colors";
 import { typography } from "@/styles/typography";
 import { rem } from "@/utils/remConvert";
+import { useState } from "react";
 import styled from "styled-components";
+import GroupingFilters from "./_components/GroupingFilters";
 import ProductsFilters from "./_components/ProductsFilters";
 
 const S = {
-  Container: styled.div``,
+  Container: styled.div`
+    width: 100%;
+  `,
   Header: styled.h1`
     ${typography.H1}
     color: ${colors.BLACK};
@@ -23,10 +27,20 @@ const S = {
 };
 
 function ProductsPage() {
+  const [toggleIsList, setToggleIsList] = useState(true);
+
+  function handleSetToggleIsList() {
+    setToggleIsList((prev) => !prev);
+  }
+
   return (
     <MaxWidthWrapper>
       <S.Container>
         <S.Header>Products</S.Header>
+        <GroupingFilters
+          toggleIsList={toggleIsList}
+          setToggleIsList={handleSetToggleIsList}
+        />
         <S.Content>
           <ProductsFilters />
         </S.Content>
