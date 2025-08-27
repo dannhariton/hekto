@@ -9,7 +9,9 @@ import GroupingFilters from "./_components/GroupingFilters";
 import ProductsFilters from "./_components/ProductsFilters";
 
 const S = {
-  Container: styled.div``,
+  Container: styled.div`
+    width: 100%;
+  `,
   Header: styled.h1`
     ${typography.H1}
     color: ${colors.BLACK};
@@ -25,17 +27,20 @@ const S = {
 };
 
 function ProductsPage() {
-  const [isList, setIsList] = useState(true);
+  const [toggleIsList, setToggleIsList] = useState(true);
 
-  function handleSetIsList() {
-    setIsList((prev) => !prev);
+  function handleSetToggleIsList() {
+    setToggleIsList((prev) => !prev);
   }
 
   return (
     <MaxWidthWrapper>
       <S.Container>
         <S.Header>Products</S.Header>
-        <GroupingFilters isList={isList} setIsList={handleSetIsList} />
+        <GroupingFilters
+          toggleIsList={toggleIsList}
+          setToggleIsList={handleSetToggleIsList}
+        />
         <S.Content>
           <ProductsFilters />
         </S.Content>

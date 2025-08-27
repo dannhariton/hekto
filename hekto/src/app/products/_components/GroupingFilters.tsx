@@ -45,11 +45,11 @@ const S = {
 };
 
 function GroupingFilters({
-  isList,
-  setIsList,
+  toggleIsList,
+  setToggleIsList,
 }: {
-  isList: boolean;
-  setIsList: () => void;
+  toggleIsList: boolean;
+  setToggleIsList: () => void;
 }) {
   return (
     <S.Menu>
@@ -67,10 +67,10 @@ function GroupingFilters({
       </S.MenuItem>
       <S.MenuItem>
         <S.Label>View</S.Label>
-        <S.ViewButton onClick={setIsList} $isActive={isList}>
+        <S.ViewButton onClick={setToggleIsList} $isActive={toggleIsList}>
           <DashboardIcon />
         </S.ViewButton>
-        <S.ViewButton onClick={setIsList} $isActive={!isList}>
+        <S.ViewButton onClick={setToggleIsList} $isActive={!toggleIsList}>
           <ViewStreamSharpIcon />
         </S.ViewButton>
       </S.MenuItem>
