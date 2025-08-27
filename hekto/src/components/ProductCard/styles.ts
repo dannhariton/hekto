@@ -29,11 +29,11 @@ export const S = {
 
 const styles: Styles = {
   FEATURED: css`
-    width: ${rem(304)};
+    width: calc((100% - (rem(32) * 3)) / 4);
     display: flex;
+    overflow: hidden;
     flex-direction: column;
     align-items: center;
-
     border-radius: ${rem(8)};
     background-color: ${colors.WHITE};
     box-shadow: ${rem(8, 24, 32, -16)} rgba(${colors.BLACK_RGB}, 0.15);
@@ -43,6 +43,7 @@ const styles: Styles = {
     &:focus,
     &:focus-within {
       box-shadow: ${rem(8, 64, 80, -16)} rgba(${colors.BLACK_RGB}, 0.15);
+      transform: translateY(${rem(-24)});
 
       ${S.IconsContainer} {
         opacity: 1;
@@ -52,9 +53,9 @@ const styles: Styles = {
     ${S.IconsContainer} {
       opacity: 0;
       position: absolute;
-      width: ${rem(304)};
-      height: ${rem(232)};
-
+      width: 100%;
+      height: 100%;
+      /* background-color: blue; */
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -72,13 +73,13 @@ const styles: Styles = {
 
     ${S.ProductImage} {
       width: 100%;
-      height: ${rem(232)};
+
+      aspect-ratio: 1.5/1;
       position: relative;
 
       img {
         width: 100%;
         height: 100%;
-        border-radius: ${rem(4)};
       }
     }
 
