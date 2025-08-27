@@ -63,7 +63,7 @@ const S = {
 export default function Featured() {
   return (
     <section>
-      <S.Header>Top Featured</S.Header>
+      <S.Header>Featured Products</S.Header>
       <MaxWidthWrapper>
         <S.Featured>
           <S.StyledSwiperContainer
