@@ -101,11 +101,11 @@ const styles: Styles = {
     }
   `,
   LATEST: css`
-    width: ${rem(416)};
-
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all 0.3s;
 
     &:hover,
     &:focus,
