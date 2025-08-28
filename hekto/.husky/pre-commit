@@ -1,0 +1,1 @@
+cd hekto && npm run pre-commit
