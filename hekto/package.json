@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "cd .. && husky hekto/.husky",
+    "pre-commit": "lint-staged && npm run build"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -26,6 +28,11 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.4.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
     "typescript": "^5"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": "eslint"
   }
 }
