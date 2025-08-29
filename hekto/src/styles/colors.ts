@@ -1,3 +1,5 @@
+export type Colors = keyof typeof colors;
+
 export const colors = {
   WHITE: "#ffffff",
   LAVENDER_WHITE: "#EEEFFB",
@@ -7,6 +9,7 @@ export const colors = {
   GREY_3: "#8A8FB9",
   GREY_4: "#E7E4F8",
   GREY_5: "#9DA0AE",
+  GREY_6: "#F1F0FF",
   BLUE: "#151875",
   BLACK: "#101750",
   BLACK_RGB: "16, 23, 80",

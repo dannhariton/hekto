@@ -30,11 +30,11 @@ export const S = {
 
 const styles: Styles = {
   FEATURED: css`
-    width: ${rem(304)};
+    width: calc((100% - (rem(32) * 3)) / 4);
     display: flex;
+    overflow: hidden;
     flex-direction: column;
     align-items: center;
-
     border-radius: ${rem(8)};
     background-color: ${colors.WHITE};
     box-shadow: ${rem(8, 24, 32, -16)} rgba(${colors.BLACK_RGB}, 0.15);
@@ -44,6 +44,7 @@ const styles: Styles = {
     &:focus,
     &:focus-within {
       box-shadow: ${rem(8, 64, 80, -16)} rgba(${colors.BLACK_RGB}, 0.15);
+      transform: translateY(${rem(-24)});
 
       ${S.IconsContainer} {
         opacity: 1;
@@ -53,9 +54,9 @@ const styles: Styles = {
     ${S.IconsContainer} {
       opacity: 0;
       position: absolute;
-      width: ${rem(304)};
-      height: ${rem(232)};
-
+      width: 100%;
+      height: 100%;
+      /* background-color: blue; */
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -73,13 +74,13 @@ const styles: Styles = {
 
     ${S.ProductImage} {
       width: 100%;
-      height: ${rem(232)};
+
+      aspect-ratio: 1.5/1;
       position: relative;
 
       img {
         width: 100%;
         height: 100%;
-        border-radius: ${rem(4)};
       }
     }
 
@@ -102,11 +103,11 @@ const styles: Styles = {
     }
   `,
   LATEST: css`
-    width: ${rem(416)};
-
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: all 0.3s;
 
     &:hover,
     &:focus,
@@ -167,22 +168,25 @@ const styles: Styles = {
     }
   `,
   TRENDING: css`
-    width: ${rem(304)};
+    width: calc(100% - (rem(32) * 3) / 4);
     background-color: ${colors.WHITE};
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: ${rem(8)};
     box-shadow: ${rem(8, 24, 32, -16)} rgba(${colors.BLACK_RGB}, 0.15);
-
+    transition: all 0.3s;
     &:hover,
     &:focus {
+      transform: translateY(${rem(-24)});
+
       box-shadow: ${rem(8, 64, 80, -16)} rgba(${colors.BLACK_RGB}, 0.15);
     }
 
     ${S.ProductImage} {
-      width: ${rem(272)};
-      height: ${rem(232)};
+      padding: ${rem(16)};
+      width: 100%;
+      aspect-ratio: 1.17/1;
       position: relative;
       margin-top: ${rem(12)};
 
@@ -196,7 +200,7 @@ const styles: Styles = {
 
     ${S.FlexContainer} {
       width: 100%;
-      margin-top: ${rem(12)};
+      margin-top: ${rem(8)};
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -234,9 +238,12 @@ const styles: Styles = {
     flex-direction: column;
     align-items: center;
 
+    transition: all 0.3s;
     &:hover,
     &:focus,
     &:focus-within {
+      transform: translateY(${rem(-24)});
+
       ${S.IconsContainer} {
         opacity: 1;
       }
