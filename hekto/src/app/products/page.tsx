@@ -7,6 +7,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import GroupingFilters from "./_components/GroupingFilters";
 import ProductsFilters from "./_components/ProductsFilters";
+import ProductsList from "./_components/ProductsList";
 
 const S = {
   Container: styled.div`
@@ -43,6 +44,7 @@ function ProductsPage() {
         />
         <S.Content>
           <ProductsFilters />
+          <ProductsList isList={toggleIsList} />
         </S.Content>
       </S.Container>
     </MaxWidthWrapper>
