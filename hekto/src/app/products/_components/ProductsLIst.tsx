@@ -27,7 +27,7 @@ function ProductsList({ isList }: { isList: boolean }) {
 
   if (isPending) return <>Loading</>;
 
-  if (error) return <>{error}</>;
+  if (error) return <>{error.message}</>;
 
   return (
     <S.ProductsContainer>
