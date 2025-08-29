@@ -1,3 +1,4 @@
+import { useCartContext } from "@/contexts/CartContext";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import ZoomInOutlinedIcon from "@mui/icons-material/ZoomInOutlined";
@@ -15,13 +16,22 @@ const Container = styled.div<{ $direction: Direction; $gap?: string }>`
 const Icons = ({
   $direction,
   $gap,
+  id,
 }: {
   $direction: Direction;
   $gap?: string;
+  id: string;
 }) => {
+  const { addToCart } = useCartContext();
+
   return (
     <Container $direction={$direction} $gap={$gap}>
-      <IconButton>
+      <IconButton
+        onClick={(e) => {
+          e.preventDefault();
+          addToCart(id);
+        }}
+      >
         <ShoppingCartOutlinedIcon fontSize="small" />
       </IconButton>
       <IconButton>
