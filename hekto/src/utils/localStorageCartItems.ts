@@ -1,3 +1,4 @@
+"use client";
 import { Product } from "@/contexts/CartContext";
 
 export function getCartItemsFromLocalStorage() {

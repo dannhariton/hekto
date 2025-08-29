@@ -9,6 +9,7 @@ import {
   ReactNode,
   useCallback,
   useContext,
+  useEffect,
   useMemo,
   useState,
 } from "react";
@@ -33,9 +34,15 @@ export const CartContext = createContext<CartContextType>({
 });
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-  const cartItems = getCartItemsFromLocalStorage();
-  const [cartProducts, setCartProducts] = useState<Product[]>(cartItems);
-  saveCartItemsInLocalStorage(cartProducts);
+  const [cartProducts, setCartProducts] = useState<Product[]>([]);
+  useEffect(() => {
+    const cartItems = getCartItemsFromLocalStorage();
+    setCartProducts(cartItems);
+  }, []);
+
+  useEffect(() => {
+    saveCartItemsInLocalStorage(cartProducts);
+  }, [cartProducts]);
 
   const addToCart = useCallback(
     (id: string) => {
@@ -47,7 +54,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         if (isProductInCart) {
           return prevProducts.map((product) =>
             product.id === id
-              ? { ...product, quantity: product.quantity++ }
+              ? { ...product, quantity: product.quantity + 1 }
               : product
           );
         } else {
