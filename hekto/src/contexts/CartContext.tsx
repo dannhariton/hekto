@@ -1,5 +1,10 @@
 "use client";
 import {
+  deleteCartItemsFromLocalStorage,
+  getCartItemsFromLocalStorage,
+  saveCartItemsInLocalStorage,
+} from "@/utils/localStorageCartItems";
+import {
   createContext,
   ReactNode,
   useCallback,
@@ -8,7 +13,7 @@ import {
   useState,
 } from "react";
 
-type Product = {
+export type Product = {
   id: string;
   quantity: number;
 };
@@ -28,9 +33,9 @@ export const CartContext = createContext<CartContextType>({
 });
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-  const [cartProducts, setCartProducts] = useState<Product[]>([
-    { id: "1", quantity: 1 },
-  ]);
+  const cartItems = getCartItemsFromLocalStorage();
+  const [cartProducts, setCartProducts] = useState<Product[]>(cartItems);
+  saveCartItemsInLocalStorage(cartProducts);
 
   const addToCart = useCallback(
     (id: string) => {
@@ -63,13 +68,9 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   );
 
   const clearCart = useCallback(() => {
-    if (cartProducts.length) {
-      setCartProducts([]);
-    }
-    return cartProducts;
-  }, [setCartProducts, cartProducts]);
-
-  console.log(cartProducts);
+    deleteCartItemsFromLocalStorage();
+    setCartProducts([]);
+  }, []);
 
   const value = useMemo(
     () => ({ cartProducts, addToCart, removeFromCart, clearCart }),
