@@ -1,12 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 
-export const URL = "http://localhost:4000/products";
-
 export function useFetchProducts() {
   const { data, isPending, error } = useQuery({
-    queryKey: ["product"],
+    queryKey: ["products"],
     queryFn: async () => {
-      const response = await fetch(URL);
+      const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}`);
       return response.json();
     },
   });
