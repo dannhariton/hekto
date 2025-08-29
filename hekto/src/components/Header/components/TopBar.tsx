@@ -1,4 +1,5 @@
 import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
+import { useCartContext } from "@/contexts/CartContext";
 import { colors } from "@/styles/colors";
 import { typography } from "@/styles/typography";
 import { rem } from "@/utils/remConvert";
@@ -41,13 +42,29 @@ const S = {
   MenuLink: styled(Link)`
     display: flex;
     align-items: center;
+    position: relative;
     color: ${colors.GREY_WHITE_SHADE};
     gap: ${rem(4)};
     ${typography.subtitleExtraSmall}
   `,
+  NumberProductsInCart: styled.span`
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: ${colors.WHITE};
+    background-color: ${colors.PRIMARY};
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    left: 40%;
+    top: -40%;
+    ${typography.labelSmall}
+  `,
 };
 
 function TopBar() {
+  const { cartProducts } = useCartContext();
   return (
     <S.Container>
       <MaxWidthWrapper>
@@ -79,7 +96,12 @@ function TopBar() {
             Wishlist
             <FavoriteBorderOutlined fontSize="small" />
           </S.MenuLink>
-          <S.MenuLink href="/">
+          <S.MenuLink href="/cart">
+            {cartProducts.length !== 0 && (
+              <S.NumberProductsInCart>
+                {cartProducts.length}
+              </S.NumberProductsInCart>
+            )}
             <ShoppingCartOutlined fontSize="small" />
           </S.MenuLink>
         </S.Menu>
