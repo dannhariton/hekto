@@ -7,11 +7,11 @@ import { S } from "./styles";
 import { Product, Variant } from "./types";
 
 const content: Record<Variant, (product: Product) => ReactNode> = {
-  FEATURED: ({ name, code, price, thumbnail }) => (
+  FEATURED: ({ name, code, price, thumbnail, id }) => (
     <>
       <S.ProductImage>
         <S.IconsContainer>
-          <Icons $direction="ROW" />
+          <Icons $direction="ROW" id={id} price={price} />
           <Button $variant="SUCCESS">View Details</Button>
         </S.IconsContainer>
         <Image
@@ -27,11 +27,11 @@ const content: Record<Variant, (product: Product) => ReactNode> = {
       <S.Price>${price}</S.Price>
     </>
   ),
-  LATEST: ({ name, wasPrice, price, thumbnail }) => (
+  LATEST: ({ name, wasPrice, price, thumbnail, id }) => (
     <>
       <S.ProductImage>
         <S.IconsContainer>
-          <Icons $direction="COLUMN" />
+          <Icons $direction="COLUMN" id={id} price={price} />
         </S.IconsContainer>
         <Image
           width={200}
@@ -75,7 +75,7 @@ const content: Record<Variant, (product: Product) => ReactNode> = {
       <S.Title>{name}</S.Title>
     </>
   ),
-  LIST: ({ name, wasPrice, price, thumbnail, description, rating }) => (
+  LIST: ({ name, wasPrice, price, thumbnail, description, rating, id }) => (
     <>
       <S.ProductImage>
         <Image width={200} height={200} src={thumbnail} alt="product image" />{" "}
@@ -101,11 +101,11 @@ const content: Record<Variant, (product: Product) => ReactNode> = {
           </S.Stars>
         </S.ProductContent>
 
-        <Icons $direction="ROW" $gap="16" />
+        <Icons $direction="ROW" $gap="16" id={id} price={price} />
       </S.FlexContainer>
     </>
   ),
-  GRID: ({ name, wasPrice, price, thumbnail, description, rating }) => (
+  GRID: ({ name, wasPrice, price, thumbnail, description, rating, id }) => (
     <>
       <S.ProductImage>
         <Image width={200} height={200} src={thumbnail} alt="product image" />{" "}
@@ -131,7 +131,7 @@ const content: Record<Variant, (product: Product) => ReactNode> = {
       </S.ProductContent>
 
       <S.IconsContainer>
-        <Icons $direction="ROW" $gap="16" />
+        <Icons $direction="ROW" $gap="16" id={id} price={price} />
       </S.IconsContainer>
     </>
   ),

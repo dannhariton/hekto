@@ -11,6 +11,7 @@ import {
 } from "@mui/icons-material";
 import Link from "next/link";
 import styled from "styled-components";
+import CartProductsNumber from "./CartProductsNumber";
 
 const S = {
   Container: styled.div`
@@ -41,6 +42,7 @@ const S = {
   MenuLink: styled(Link)`
     display: flex;
     align-items: center;
+    position: relative;
     color: ${colors.GREY_WHITE_SHADE};
     gap: ${rem(4)};
     ${typography.subtitleExtraSmall}
@@ -79,8 +81,9 @@ function TopBar() {
             Wishlist
             <FavoriteBorderOutlined fontSize="small" />
           </S.MenuLink>
-          <S.MenuLink href="/">
+          <S.MenuLink href="/cart">
             <ShoppingCartOutlined fontSize="small" />
+            <CartProductsNumber />
           </S.MenuLink>
         </S.Menu>
       </MaxWidthWrapper>

@@ -1,6 +1,7 @@
 "use client";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { CartProvider } from "@/contexts/CartContext";
 import { GlobalStyle } from "@/styles/globalStyle";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Josefin_Sans, Lato } from "next/font/google";
@@ -26,14 +27,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${josefin.className} ${lato.variable}`}>
-        <QueryClientProvider client={queryClient}>
-          <StyledComponentsRegistry>
-            <GlobalStyle />
-            <Header />
-            {children}
-            <Footer />
-          </StyledComponentsRegistry>
-        </QueryClientProvider>
+        <CartProvider>
+          <QueryClientProvider client={queryClient}>
+            <StyledComponentsRegistry>
+              <GlobalStyle />
+              <Header />
+              {children}
+              <Footer />
+            </StyledComponentsRegistry>
+          </QueryClientProvider>
+        </CartProvider>
       </body>
     </html>
   );
