@@ -17,10 +17,12 @@ const Icons = ({
   $direction,
   $gap,
   id,
+  price,
 }: {
   $direction: Direction;
   $gap?: string;
   id: string;
+  price: number;
 }) => {
   const { addToCart } = useCartContext();
 
@@ -29,7 +31,7 @@ const Icons = ({
       <IconButton
         onClick={(e) => {
           e.preventDefault();
-          addToCart(id);
+          addToCart(id, price);
         }}
       >
         <ShoppingCartOutlinedIcon fontSize="small" />

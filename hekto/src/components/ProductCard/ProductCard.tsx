@@ -11,7 +11,7 @@ const content: Record<Variant, (product: Product) => ReactNode> = {
     <>
       <S.ProductImage>
         <S.IconsContainer>
-          <Icons $direction="ROW" id={id} />
+          <Icons $direction="ROW" id={id} price={price} />
           <Button $variant="SUCCESS">View Details</Button>
         </S.IconsContainer>
         <Image
@@ -31,7 +31,7 @@ const content: Record<Variant, (product: Product) => ReactNode> = {
     <>
       <S.ProductImage>
         <S.IconsContainer>
-          <Icons $direction="COLUMN" id={id} />
+          <Icons $direction="COLUMN" id={id} price={price} />
         </S.IconsContainer>
         <Image
           width={200}
@@ -101,7 +101,7 @@ const content: Record<Variant, (product: Product) => ReactNode> = {
           </S.Stars>
         </S.ProductContent>
 
-        <Icons $direction="ROW" $gap="16" id={id} />
+        <Icons $direction="ROW" $gap="16" id={id} price={price} />
       </S.FlexContainer>
     </>
   ),
@@ -131,7 +131,7 @@ const content: Record<Variant, (product: Product) => ReactNode> = {
       </S.ProductContent>
 
       <S.IconsContainer>
-        <Icons $direction="ROW" $gap="16" id={id} />
+        <Icons $direction="ROW" $gap="16" id={id} price={price} />
       </S.IconsContainer>
     </>
   ),
