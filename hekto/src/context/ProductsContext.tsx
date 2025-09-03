@@ -53,6 +53,9 @@ export const ProductsProvider = ({ children }: { children: ReactNode }) => {
 
   const { data, isPending, error } = useQuery({
     queryKey: ["products", params, page],
+    // i want to not cache the data so it fetches every time
+    gcTime: 0,
+    staleTime: 0,
     queryFn: async () => {
       const response = await fetch(url);
       linkHeaders.current = parseLinkHeader(response.headers.get("Link"));
