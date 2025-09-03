@@ -1,6 +1,8 @@
-import { useFetchProducts } from "@/app/hooks/useFetchProducts";
+"use client";
+
 import { ProductCard } from "@/components/ProductCard";
 import { Product } from "@/components/ProductCard/types";
+import { useProductsContext } from "@/context/ProductsContext";
 import { media } from "@/utils/media";
 import { rem } from "@/utils/remConvert";
 import styled from "styled-components";
@@ -23,7 +25,7 @@ const S = {
 };
 
 function ProductsList({ isList }: { isList: boolean }) {
-  const { data, isPending, error } = useFetchProducts();
+  const { data, isPending, error } = useProductsContext();
 
   if (isPending) return <>Loading</>;
 
@@ -31,13 +33,17 @@ function ProductsList({ isList }: { isList: boolean }) {
 
   return (
     <S.ProductsContainer>
-      {data.map((product: Product) => (
-        <ProductCard
-          key={product.id}
-          variant={isList ? "GRID" : "LIST"}
-          product={product}
-        />
-      ))}
+      {data.length ? (
+        data.map((product: Product) => (
+          <ProductCard
+            key={product.id}
+            variant={isList ? "GRID" : "LIST"}
+            product={product}
+          />
+        ))
+      ) : (
+        <>No Items</>
+      )}
     </S.ProductsContainer>
   );
 }
