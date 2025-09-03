@@ -1,6 +1,9 @@
+"use client";
+import useProductFilters from "@/hooks/useProductsFilters";
 import { colors } from "@/styles/colors";
 import { typography } from "@/styles/typography";
 import { rem } from "@/utils/remConvert";
+import { lowerCase } from "@/utils/textFormat";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { ClickAwayListener } from "@mui/material";
 import { useState } from "react";
@@ -59,26 +62,76 @@ const S = {
   `,
 };
 
-function DropDown({ options, $width }: { options: string[]; $width: number }) {
+function DropDown({
+  options,
+  $width,
+  label,
+}: {
+  options: string[];
+  $width: number;
+  label?: string;
+}) {
+  const { filters, setFilters } = useProductFilters();
+  const initialState =
+    label === "limit" ? filters[label as keyof typeof filters] : options[0];
   const [isVisible, setIsVisible] = useState(false);
-  const [selectOption, setSelectedOption] = useState(options[0]);
+  const [selectOption, setSelectedOption] = useState(initialState);
   const handleClickAway = () => setIsVisible(false);
 
   const content = (
     <S.OptionsContainer>
       {options
         .filter((option) => option !== selectOption)
-        .map((option) => (
-          <S.Option
-            onClick={() => {
-              setSelectedOption(option);
-              setIsVisible(false);
-            }}
-            key={option}
-          >
-            {option}
-          </S.Option>
-        ))}
+        .map((option) => {
+          if (label === "sort") {
+            let [sort, order] = ["soldTimes", "asc"];
+
+            if (lowerCase(option).includes("low")) {
+              sort = "price";
+              order = "asc";
+            }
+
+            if (lowerCase(option).includes("high")) {
+              sort = "price";
+              order = "desc";
+            }
+
+            return (
+              <S.Option
+                onClick={() => {
+                  setSelectedOption(option);
+                  setIsVisible(false);
+                  setFilters(
+                    { sort: sort, order: order },
+                    "single",
+                    false,
+                    true
+                  );
+                }}
+                key={option}
+              >
+                {option}
+              </S.Option>
+            );
+          }
+          return (
+            <S.Option
+              onClick={() => {
+                setSelectedOption(option);
+                setIsVisible(false);
+                setFilters(
+                  { [label as string]: option },
+                  "single",
+                  false,
+                  true
+                );
+              }}
+              key={option}
+            >
+              {option}
+            </S.Option>
+          );
+        })}
     </S.OptionsContainer>
   );
 
