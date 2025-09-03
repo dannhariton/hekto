@@ -1,13 +1,15 @@
 "use client";
 import { MaxWidthWrapper } from "@/components/MaxWidthWrapper";
+import PaginationInput from "@/components/Pagination/PaginationInput";
+import { ProductsProvider } from "@/context/ProductsContext";
 import { colors } from "@/styles/colors";
 import { typography } from "@/styles/typography";
 import { rem } from "@/utils/remConvert";
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import styled from "styled-components";
 import GroupingFilters from "./_components/GroupingFilters";
 import ProductsFilters from "./_components/ProductsFilters";
-import ProductsList from "./_components/ProductsList";
+import ProductsList from "./_components/ProductsLIst";
 
 const S = {
   Container: styled.div`
@@ -35,19 +37,24 @@ function ProductsPage() {
   }
 
   return (
-    <MaxWidthWrapper>
-      <S.Container>
-        <S.Header>Products</S.Header>
-        <GroupingFilters
-          toggleIsList={toggleIsList}
-          setToggleIsList={handleSetToggleIsList}
-        />
-        <S.Content>
-          <ProductsFilters />
-          <ProductsList isList={toggleIsList} />
-        </S.Content>
-      </S.Container>
-    </MaxWidthWrapper>
+    <Suspense fallback={<>Loading...</>}>
+      <ProductsProvider>
+        <MaxWidthWrapper>
+          <S.Container>
+            <S.Header>Products</S.Header>
+            <GroupingFilters
+              toggleIsList={toggleIsList}
+              setToggleIsList={handleSetToggleIsList}
+            />
+            <PaginationInput />
+            <S.Content>
+              <ProductsFilters />
+              <ProductsList isList={toggleIsList} />
+            </S.Content>
+          </S.Container>
+        </MaxWidthWrapper>
+      </ProductsProvider>
+    </Suspense>
   );
 }
 
