@@ -1,8 +1,12 @@
+"use client";
+import { useProductsContext } from "@/context/ProductsContext";
 import { colors } from "@/styles/colors";
 import { typography } from "@/styles/typography";
 import { rem } from "@/utils/remConvert";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import styled from "styled-components";
 
 const S = {
@@ -20,13 +24,13 @@ const S = {
     color: ${colors.BLACK};
     ${typography.bodySmall}
   `,
-  LastPageButton: styled.button`
+  LastPageButton: styled(Link)`
     color: ${colors.BLACK};
     display: flex;
     justify-content: center;
     align-items: center;
   `,
-  NextPageButton: styled.button`
+  NextPageButton: styled(Link)`
     color: ${colors.BLACK};
     display: flex;
     justify-content: center;
@@ -34,14 +38,26 @@ const S = {
   `,
 };
 
-function PaginationInput({ page }: { page: number }) {
+type LinkHeaders = {
+  prev?: string;
+  next?: string;
+  [key: string]: string | undefined;
+};
+
+function PaginationInput() {
+  const { linkHeaders } = useProductsContext();
+  const current: LinkHeaders = (linkHeaders.current ?? {}) as LinkHeaders;
+  const searchParams = useSearchParams();
+  const page = searchParams.get("_page") || "1";
+  console.log(page);
+
   return (
-    <S.PaginationContainer>
-      <S.LastPageButton>
+    <S.PaginationContainer key={page}>
+      <S.LastPageButton href={current.prev ?? "#"}>
         <RemoveIcon fontSize="small" />
       </S.LastPageButton>
       <S.Page>{page}</S.Page>
-      <S.NextPageButton>
+      <S.NextPageButton href={current.next ?? "#"}>
         <AddIcon fontSize="small" />
       </S.NextPageButton>
     </S.PaginationContainer>

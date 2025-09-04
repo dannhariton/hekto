@@ -23,7 +23,10 @@ function Stars({ rating }: { rating: number }) {
   return (
     <Container>
       {stars.map((star) => (
-        <Star key={star} $variant={star <= rating ? "FILLED" : "UNFILLED"} />
+        <Star
+          key={star}
+          $variant={Math.ceil(rating) >= star ? "FILLED" : "UNFILLED"}
+        />
       ))}
     </Container>
   );

@@ -5,6 +5,7 @@ import { rem } from "@/utils/remConvert";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 
 import SearchIcon from "@mui/icons-material/Search";
+import { ReactNode } from "react";
 import styled from "styled-components";
 import { Button } from "./Buttons/Button";
 
@@ -59,16 +60,25 @@ const S = {
   `,
 };
 
-const content = {
-  COMPLEX: (
+const content: Record<Variant, () => ReactNode> = {
+  COMPLEX: () => (
     <>
-      <S.Input type="text" placeholder="Search" />
+      <S.Input
+        type="text"
+        placeholder="Search"
+        // ref={searchTerm}
+        onSubmit={(e) => {
+          e.preventDefault();
+          //TO DO: fix submit search
+          // setFilters({ name: searchTerm.current.value }, "search");
+        }}
+      />
       <Button $variant="ICON">
         <SearchIcon />
       </Button>
     </>
   ),
-  DEFAULT: (
+  DEFAULT: () => (
     <>
       <S.Input type="email" placeholder="Enter email" />
       <S.ErrorIconContainer>
@@ -80,7 +90,10 @@ const content = {
 };
 
 function Input({ $variant }: { $variant: Variant }) {
-  return <S.Container>{content[$variant]}</S.Container>;
+  // const { setFilters } = useProductFilters();
+  // const searchTerm = useRef("");
+
+  return <S.Container>{content[$variant]()}</S.Container>;
 }
 
 export default Input;

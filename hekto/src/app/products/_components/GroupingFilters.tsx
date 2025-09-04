@@ -55,14 +55,19 @@ function GroupingFilters({
     <S.Menu>
       <S.MenuItem>
         <S.Label>Per Page</S.Label>
-        <DropDown options={["5", "10", "15"]} $width={96} />
+        <DropDown
+          options={["10", "15", "20", "25"]}
+          $width={96}
+          label="limit"
+        />
       </S.MenuItem>
 
       <S.MenuItem>
         <S.Label>Sort By</S.Label>
         <DropDown
-          options={["Price: High - > Low", "Price: Low - > High", "Best Match"]}
+          options={["Best Match", "Price Higher", "Price Lower"]}
           $width={208}
+          label="sort"
         />
       </S.MenuItem>
       <S.MenuItem>
