@@ -145,7 +145,7 @@ export const ProductCard = ({
   product: Product;
 }) => {
   return (
-    <S.Container href="/" $variant={variant}>
+    <S.Container href={`/products/${product.id}`} $variant={variant}>
       {content[variant](product)}
     </S.Container>
   );

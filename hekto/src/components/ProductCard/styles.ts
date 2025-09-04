@@ -30,7 +30,7 @@ export const S = {
 
 const styles: Styles = {
   FEATURED: css`
-    width: ${rem(304)};
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,6 +39,14 @@ const styles: Styles = {
     background-color: ${colors.WHITE};
     box-shadow: ${rem(8, 24, 32, -16)} rgba(${colors.BLACK_RGB}, 0.15);
     transition: all 0.2s ease-in;
+
+    @media ${media.greaterThan("md")} {
+      width: calc((100% - ${rem(16)}) / 2);
+    }
+
+    @media ${media.greaterThan("lg")} {
+      width: calc((100% - ${rem(24)} * 2) / 3);
+    }
 
     &:hover,
     &:focus,
@@ -53,8 +61,9 @@ const styles: Styles = {
     ${S.IconsContainer} {
       opacity: 0;
       position: absolute;
-      width: ${rem(304)};
-      height: ${rem(232)};
+      width: 100%;
+      height: 80%;
+      top: 10%;
 
       display: flex;
       justify-content: space-between;
